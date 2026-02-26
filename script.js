@@ -15,6 +15,17 @@ const observer = new IntersectionObserver(
 
 reveals.forEach((item) => observer.observe(item));
 
+// Fallback for mobile browsers where IntersectionObserver can miss updates
+// when the scroll container is not the default document viewport.
+setTimeout(() => {
+  reveals.forEach((item) => {
+    if (!item.classList.contains("is-visible")) {
+      item.classList.add("is-visible");
+      observer.unobserve(item);
+    }
+  });
+}, 1200);
+
 /* ========== RANDO-MODE TOGGLE (injects an undescribed corner button) ========== */
 
 /*
@@ -193,6 +204,10 @@ Behavior:
       muteBtn.classList.toggle("active", isMuted);
     }
 
+    function pickRandomTrackIndex() {
+      return Math.floor(Math.random() * TRACKS.length);
+    }
+
     async function playCurrentTrack(restart = false) {
       if (trackIndex < 0) {
         trackIndex = 0;
@@ -279,6 +294,11 @@ Behavior:
         playNextTrack();
       }
     });
+
+    if (!initial) {
+      trackIndex = pickRandomTrackIndex();
+      writeTrackIndex(trackIndex);
+    }
 
     syncMuteUI();
 

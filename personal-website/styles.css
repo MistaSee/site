@@ -1,0 +1,853 @@
+/* =========================================================
+   styles.css — Modern theme + secret Rando-Mode (retro chaos)
+   Drop-in replacement for your current stylesheet.
+
+   How it works:
+   - Normal mode = modern, clean.
+   - Rando-Mode = add class "rando-mode" to <body> (your JS toggle does this).
+   - Assets are OPTIONAL. If you don't have the GIFs/fonts/cursors, it degrades safely.
+   ========================================================= */
+
+/* -------------------------
+   Modern base theme
+-------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap");
+
+:root{
+  --bg-1:#0a0b16;
+  --bg-2:#141329;
+  --bg-3:#1b1a3a;
+
+  --ink:#f6f3ff;
+  --muted:#c3b8ee;
+
+  --accent-1:#ff5f8a;
+  --accent-2:#59e3ff;
+  --accent-3:#f9cf58;
+
+  --card: rgba(24, 21, 47, 0.85);
+  --border: rgba(255,255,255,0.08);
+  --glow: 0 0 30px rgba(89,227,255,0.2);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html, body { height:100%; }
+
+body{
+  font-family:"Space Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(89,227,255,0.15), transparent 55%),
+    radial-gradient(circle at 20% 20%, rgba(255,95,138,0.2), transparent 50%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
+  color:var(--ink);
+  min-height:100vh;
+  line-height:1.6;
+}
+
+a{ color:inherit; text-decoration:none; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline: 3px solid rgba(89,227,255,0.25);
+  outline-offset: 3px;
+}
+
+/* IMPORTANT: scrolling must work */
+.page{
+  position:relative;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+/* subtle modern overlay lines + glow */
+.page::before,
+.page::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+.page::before{
+  background:
+    linear-gradient(120deg, rgba(89,227,255,0.08), transparent 45%),
+    linear-gradient(260deg, rgba(255,95,138,0.10), transparent 50%);
+}
+.page::after{
+  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 100% 22px;
+  opacity:0.2;
+}
+
+.wrapper{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:28px 8vw;
+  position:sticky;
+  top:0;
+  z-index:10;
+
+  backdrop-filter: blur(16px);
+  background: rgba(10,11,22,0.65);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand{
+  font-family:"Orbitron",sans-serif;
+  font-size:1.2rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+  font-size:0.95rem;
+  text-transform:uppercase;
+  letter-spacing:0.15em;
+}
+
+.nav-links a{
+  position:relative;
+  padding-bottom:6px;
+  color:var(--muted);
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:2px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  transform: scaleX(0);
+  transform-origin:left;
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after{ transform: scaleX(1); }
+.nav-links a.active{ color:var(--ink); }
+
+main{
+  flex:1;
+  padding: 5vw 8vw 8vw;
+  display:grid;
+  gap:48px;
+}
+
+.hero{
+  display:grid;
+  gap:22px;
+  max-width:720px;
+}
+
+.kicker{
+  font-family:"Orbitron",sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.35em;
+  font-size:0.75rem;
+  color:var(--accent-2);
+}
+
+.hero h1{
+  font-family:"Orbitron",sans-serif;
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  line-height:1.1;
+}
+
+.hero p{
+  font-size:1.1rem;
+  color:var(--muted);
+}
+
+.cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 22px;
+  border-radius:999px;
+  border:1px solid transparent;
+  background: linear-gradient(120deg, var(--accent-1), var(--accent-2));
+  color:#090914;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  font-size:0.85rem;
+  box-shadow: var(--glow);
+}
+.button.secondary{
+  background:transparent;
+  color:var(--ink);
+  border-color: rgba(255,255,255,0.3);
+  box-shadow:none;
+}
+
+.section-title{
+  font-family:"Orbitron",sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  font-size:0.9rem;
+  color:var(--accent-3);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap:20px;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding:22px;
+  border-radius:18px;
+  display:grid;
+  gap:12px;
+  box-shadow: 0 20px 60px rgba(5,5,15,0.45);
+  backdrop-filter: blur(12px);
+}
+
+.card h3{ font-size:1.15rem; }
+.card p{ color:var(--muted); font-size:0.98rem; }
+
+.tag{
+  font-size:0.75rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--accent-2);
+}
+
+.split{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:32px;
+  align-items:center;
+}
+
+.media-frame{
+  border-radius:24px;
+  border: 1px dashed rgba(255,255,255,0.3);
+  background: linear-gradient(135deg, rgba(89,227,255,0.08), rgba(255,95,138,0.10));
+  padding:28px;
+  min-height:260px;
+  display:grid;
+  place-items:center;
+  color:var(--muted);
+  text-align:center;
+}
+
+.media-frame .headshot{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.list{ display:grid; gap:16px; }
+
+.list-item{
+  padding:16px 20px;
+  border-radius:16px;
+  border: 1px solid var(--border);
+  background: rgba(12,12,26,0.6);
+  display:grid;
+  gap:8px;
+}
+.list-item span{
+  color:var(--accent-2);
+  font-size:0.8rem;
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+}
+
+.chatbot-list .list-item h3 a{
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.2s ease;
+}
+
+.chatbot-list .list-item h3 a:hover,
+.chatbot-list .list-item h3 a:focus-visible{
+  color: var(--accent-1);
+}
+
+.words-list .list-item img{
+  width: 100%;
+  max-width: 560px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.words-list .list-item h3 a{
+  color: var(--accent-3);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.words-list .list-item h3 a:hover,
+.words-list .list-item h3 a:focus-visible{
+  color: var(--accent-2);
+}
+
+.talks-marquee{
+  display: grid;
+  gap: 12px;
+}
+
+.talks-viewport{
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(12,12,26,0.55);
+  padding: 12px;
+}
+
+.talks-track{
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+.talk-embed{
+  flex: 0 0 min(88vw, 520px);
+  aspect-ratio: 16 / 9;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.35);
+}
+
+.talk-embed iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+form{
+  display:grid;
+  gap:16px;
+  max-width:520px;
+}
+
+input, textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.2);
+  background: rgba(9,8,20,0.8);
+  color:var(--ink);
+  font-family:inherit;
+}
+textarea{ min-height:140px; }
+
+.footer{
+  padding:32px 8vw 48px;
+  border-top: 1px solid var(--border);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  font-size:0.9rem;
+  color:var(--muted);
+}
+.footer a{ color:var(--accent-2); }
+
+.reveal{
+  opacity:0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+@media (max-width: 720px){
+  .nav{ flex-direction:column; gap:16px; }
+  .nav-links{ flex-wrap:wrap; justify-content:center; }
+  main{ padding: 12vw 8vw 16vw; }
+  .hero h1{ font-size:2.2rem; }
+}
+
+/* -------------------------
+   Secret Toggle Button
+-------------------------- */
+
+.rando-toggle{
+  position:fixed;
+  top:12px;
+  right:12px;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.35);
+  display:grid;
+  place-items:center;
+  z-index:9999;
+  cursor:pointer;
+  transition: transform 200ms ease, background 200ms ease, opacity 200ms ease;
+  backdrop-filter: blur(6px);
+}
+.rando-toggle:hover{ transform: scale(1.08); }
+.rando-toggle:active{ transform: scale(0.98); }
+.rando-toggle__dot{
+  width: 22px;
+  height: 22px;
+  background-image: url("gbc.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1);
+  transition: opacity 200ms ease, transform 200ms ease;
+  opacity: 0.95;
+}
+.rando-toggle.active{
+  background: rgba(0,0,0,0.6);
+  border-color: rgba(255,255,255,0.28);
+}
+.rando-toggle.active .rando-toggle__dot{
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+.music-toggle{
+  position: fixed;
+  top: 12px;
+  left: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 200ms ease, background 200ms ease, opacity 200ms ease;
+  backdrop-filter: blur(6px);
+}
+.music-toggle:hover{ transform: scale(1.08); }
+.music-toggle:active{ transform: scale(0.98); }
+.music-toggle::after{
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 8px);
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+.music-toggle:hover::after,
+.music-toggle:focus-visible::after{
+  opacity: 1;
+}
+
+.mute-toggle{
+  position: fixed;
+  top: 12px;
+  left: 58px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 200ms ease, background 200ms ease, opacity 200ms ease;
+  backdrop-filter: blur(6px);
+}
+.mute-toggle:hover{ transform: scale(1.08); }
+.mute-toggle:active{ transform: scale(0.98); }
+.mute-toggle.active{
+  background: rgba(0,0,0,0.6);
+  border-color: rgba(255,255,255,0.28);
+}
+
+/* =========================================================
+   RANDO MODE — FULL SITE RETRO WEIRDNESS
+   (Add class "rando-mode" to <body>)
+   ========================================================= */
+
+/* Optional embedded font (if present). Safe fallback if missing. */
+@font-face{
+  font-family:'fixedsys_excelsior_3.01Rg';
+  src: url('fontquirrels/fsex300-webfont.eot');
+  src:
+    url('fontquirrels/fsex300-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fontquirrels/fsex300-webfont.woff') format('woff'),
+    url('fontquirrels/fsex300-webfont.ttf') format('truetype'),
+    url('fontquirrels/fsex300-webfont.svg#fixedsys_excelsior_3.01Rg') format('svg');
+  font-weight:normal;
+  font-style:normal;
+}
+
+/* Turn off modern overlays so the GIF wallpaper wins */
+.rando-mode .page::before,
+.rando-mode .page::after{
+  opacity:0 !important;
+  background:none !important;
+}
+
+/* Wallpaper + type + cursor */
+.rando-mode body,
+.rando-mode .page{
+  background-image: url("images/IMG_TILE_ANIMATED.gif");
+  background-repeat: repeat;
+  background-color: black;
+
+  font-family: 'fixedsys_excelsior_3.01Rg', monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color:white;
+  font-size: 30px;
+  letter-spacing: 0.02em;
+
+  /* Keep scroll sane */
+  overflow-x:hidden;
+  overflow-y:auto;
+
+  /* Slightly cursed */
+  filter: saturate(1.45) contrast(1.15);
+}
+
+.rando-mode body{
+  cursor: url('images/IMG_CURSOR.png'), auto;
+}
+.rando-mode img{
+  cursor: url('images/IMG_CURSOR_BUTTON.png'), auto;
+  image-rendering: pixelated;
+  filter: invert(1) contrast(1.1) saturate(1.6);
+  border: 2px solid white;
+  box-shadow: 4px 4px 0 #ff00ff;
+}
+
+/* LINKS: GeoCities after dark */
+.rando-mode a,
+.rando-mode a:visited{
+  color:white !important;
+  background:black !important;
+  text-decoration:none !important;
+  text-shadow: 1px 1px 0 #ff00ff, -1px 0 0 #00ff00;
+}
+.rando-mode a:hover{
+  color:#2FFF00 !important;
+  background:#0000AE !important;
+}
+
+/* NAV: gross “system bar” */
+.rando-mode .nav{
+  backdrop-filter:none !important;
+  background: black !important;
+  background-image: url("images/IMG_BACKGROUND_SML.png") !important;
+  background-repeat: repeat-x !important;
+
+  outline: 3px solid #0000AE !important;
+  box-shadow: 0px 0px 0px 5px #A9A9A9 !important;
+  border: 2px solid white !important;
+  border-image: url(images/IMG_WATERLOOP.gif) 1 round !important;
+}
+.rando-mode .nav-links a::after{ display:none !important; }
+.rando-mode .brand{
+  font-family: 'fixedsys_excelsior_3.01Rg', monaco, monospace !important;
+  letter-spacing: 0.1em !important;
+  text-transform:none !important;
+}
+
+/* MAIN spacing tighter + more “stack of windows” */
+.rando-mode main{
+  padding: 32px 22px 140px !important;
+  gap: 26px !important;
+}
+
+/* “Window skin” for your real components */
+.rando-mode .hero,
+.rando-mode section,
+.rando-mode article,
+.rando-mode .card,
+.rando-mode .list-item,
+.rando-mode .media-frame,
+.rando-mode form{
+  background-color: black !important;
+  background-image: url("images/IMG_BACKGROUND_SML.png") !important;
+  background-repeat: repeat-x !important;
+
+  padding: 14px !important;
+  border-radius: 6px !important;
+
+  outline: 3px solid #0000AE !important;
+  box-shadow: 0px 0px 0px 5px #A9A9A9, 0 16px 0 rgba(0,0,0,0.55) !important;
+
+  border: 2px solid white !important;
+  border-image: url(images/IMG_WATERLOOP.gif) 1 round !important;
+
+  text-shadow: 1px 0.2px #FF00FF !important;
+
+  backdrop-filter:none !important;
+}
+
+/* Headings: neon wobble */
+.rando-mode h1{
+  font-size: 30pt;
+  color:#0000AE;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 #FF00FF,
+    -1px 1px 0 #00FF00,
+    1px 1px 0 #FF00FF;
+  margin: 5pt 0;
+  display:inline-block;
+  background-color:black;
+
+  animation: rando-rotation 0.6s ease-out alternate infinite;
+}
+@keyframes rando-rotation{
+  from{ transform: rotate(-1deg); }
+  to{ transform: rotate(1deg); }
+}
+
+.rando-mode h2,
+.rando-mode h3,
+.rando-mode .section-title,
+.rando-mode .kicker{
+  font-family: 'fixedsys_excelsior_3.01Rg', monaco, monospace !important;
+  text-transform:none !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* Section title = toxic label */
+.rando-mode .section-title{
+  color: black !important;
+  background: #00FF1F !important;
+  display:inline-block;
+  padding: 2px 6px;
+  border: 2px solid white;
+  box-shadow: 2px 2px 0 #ff00ff;
+}
+
+/* Paragraphs become CRT-manual */
+.rando-mode p,
+.rando-mode li,
+.rando-mode .card p,
+.rando-mode .list-item p{
+  color:white !important;
+  font-size: 26px !important;
+  line-height: 1.35 !important;
+}
+
+/* Tags become “sticky labels” */
+.rando-mode .tag,
+.rando-mode .kicker{
+  color:black !important;
+  background:#00FF1F !important;
+  display:inline-block !important;
+  padding: 2px 6px !important;
+  border: 2px solid white !important;
+  box-shadow: 2px 2px 0 #ff00ff !important;
+}
+
+/* Buttons become chunky download bricks */
+.rando-mode .button,
+.rando-mode button,
+.rando-mode input[type="submit"]{
+  font-family: 'fixedsys_excelsior_3.01Rg', monaco, monospace !important;
+  background:#FF00FC !important;
+  color:black !important;
+  border-radius:0 !important;
+  border: 2px solid white !important;
+  padding: 10px 14px !important;
+  text-transform:none !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: 3px 3px 0 #00ff00, 6px 6px 0 #0000ae !important;
+}
+.rando-mode .button.secondary{
+  background:#0000AE !important;
+  color:white !important;
+}
+.rando-mode .button:hover,
+.rando-mode button:hover,
+.rando-mode input[type="submit"]:hover{
+  background:#0000AE !important;
+  color:#2FFF00 !important;
+}
+
+/* Forms: chunky + gross but readable */
+.rando-mode input,
+.rando-mode textarea{
+  font-family: 'fixedsys_excelsior_3.01Rg', monaco, monospace !important;
+  background:black !important;
+  color:white !important;
+  border-radius:0 !important;
+  border: 2px solid white !important;
+  outline: 3px solid #0000AE !important;
+  box-shadow: 2px 2px 0 #ff00ff !important;
+}
+.rando-mode input:focus,
+.rando-mode textarea:focus{
+  outline: 3px solid #2FFF00 !important;
+}
+
+/* Misalignment: scattered windows */
+.rando-mode .card:nth-child(odd),
+.rando-mode .list-item:nth-child(odd){ transform: rotate(-0.6deg); }
+.rando-mode .card:nth-child(even),
+.rando-mode .list-item:nth-child(even){ transform: rotate(0.7deg); }
+
+/* Hover jitter (subtle) */
+@keyframes rando-jitter{
+  0%{ transform: translate(0,0); }
+  30%{ transform: translate(1px,-1px); }
+  60%{ transform: translate(-1px,1px); }
+  100%{ transform: translate(0,0); }
+}
+.rando-mode .card:hover,
+.rando-mode .list-item:hover{
+  animation: rando-jitter 0.28s steps(2,end) infinite;
+}
+
+/* Footer becomes tiled slab */
+.rando-mode .footer{
+  background: black !important;
+  background-image: url("images/IMG_FOOTERTILE.gif") !important;
+  border-top: 2px solid white !important;
+  outline: 3px solid #0000AE !important;
+  box-shadow: 0px 0px 0px 5px #A9A9A9 !important;
+  padding: 24px 18px 70px !important;
+
+  backdrop-filter:none !important;
+}
+
+/* Keep the toggle visible above everything */
+.rando-mode .rando-toggle{
+  border-color: rgba(255,255,255,0.55) !important;
+  background: rgba(0,0,0,0.85) !important;
+}
+
+/* -------------------------
+   BONUS EFFECTS YOU ASKED FOR
+   1) Scanlines overlay
+   2) VHS wobble on hover
+-------------------------- */
+
+/* Scanlines + subtle chroma noise overlay (pure CSS, lightweight) */
+.rando-mode .page::after{
+  /* re-enable *retro* overlay (not the modern one) */
+  opacity: 1 !important;
+  z-index: 3 !important;
+  pointer-events:none !important;
+
+  background:
+    /* scanlines */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.06) 0px,
+      rgba(255,255,255,0.06) 1px,
+      rgba(0,0,0,0.0) 3px,
+      rgba(0,0,0,0.0) 6px
+    ),
+    /* faint vignette */
+    radial-gradient(circle at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.28) 100%);
+  mix-blend-mode: overlay;
+}
+
+/* Optional “CRT flicker” (very mild) */
+@keyframes rando-flicker{
+  0%{ opacity: 0.92; }
+  25%{ opacity: 0.96; }
+  50%{ opacity: 0.90; }
+  75%{ opacity: 0.97; }
+  100%{ opacity: 0.93; }
+}
+.rando-mode .page{
+  animation: rando-flicker 3.6s steps(2,end) infinite;
+}
+
+/* VHS wobble on hover for major blocks */
+@keyframes vhs-wobble{
+  0%{ transform: translate(0,0) skewX(0deg); filter: hue-rotate(0deg); }
+  20%{ transform: translate(1px,0) skewX(0.2deg); filter: hue-rotate(2deg); }
+  40%{ transform: translate(-1px,0) skewX(-0.2deg); filter: hue-rotate(-2deg); }
+  60%{ transform: translate(1px,0) skewX(0.15deg); filter: hue-rotate(1deg); }
+  80%{ transform: translate(-1px,0) skewX(-0.15deg); filter: hue-rotate(-1deg); }
+  100%{ transform: translate(0,0) skewX(0deg); filter: hue-rotate(0deg); }
+}
+
+/* Apply wobble on hover to the “windowed” blocks */
+.rando-mode .hero:hover,
+.rando-mode section:hover,
+.rando-mode article:hover,
+.rando-mode .card:hover,
+.rando-mode .list-item:hover,
+.rando-mode .media-frame:hover,
+.rando-mode form:hover{
+  animation: vhs-wobble 0.55s steps(2,end) infinite;
+}
+
+/* -------------------------
+   Reduced motion safety
+-------------------------- */
+
+@media (prefers-reduced-motion: reduce){
+  .reveal,
+  .reveal.is-visible{
+    transition: none !important;
+    transform: none !important;
+  }
+  .rando-mode h1,
+  .rando-mode .page,
+  .rando-mode .card:hover,
+  .rando-mode .list-item:hover,
+  .rando-mode .hero:hover,
+  .rando-mode section:hover,
+  .rando-mode article:hover,
+  .rando-mode .media-frame:hover,
+  .rando-mode form:hover{
+    animation: none !important;
+  }
+  .rando-mode body,
+  .rando-mode .page{
+    filter: none !important;
+  }
+  .rando-mode .page::after{
+    opacity: 0.25 !important;
+  }
+}

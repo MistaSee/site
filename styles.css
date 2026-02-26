@@ -225,6 +225,15 @@ main{
 .card h3{ font-size:1.15rem; }
 .card p{ color:var(--muted); font-size:0.98rem; }
 
+.card-image{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
 .tag{
   font-size:0.75rem;
   letter-spacing:0.2em;

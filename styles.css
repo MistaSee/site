@@ -234,6 +234,15 @@ main{
   display: block;
 }
 
+.card-image.brainrot-image{
+  width: calc(100% + 44px);
+  margin-left: -22px;
+  margin-right: -22px;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
 .tag{
   font-size:0.75rem;
   letter-spacing:0.2em;
@@ -298,6 +307,21 @@ main{
   font-size:0.8rem;
   text-transform:uppercase;
   letter-spacing:0.2em;
+}
+
+main a:not(.button){
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgba(89,227,255,0.75);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+main a:not(.button):hover,
+main a:not(.button):focus-visible{
+  color: var(--accent-1);
+  text-decoration-color: var(--accent-1);
 }
 
 .chatbot-list .list-item h3 a{
@@ -399,6 +423,10 @@ textarea{ min-height:140px; }
   color:var(--muted);
 }
 .footer a{ color:var(--accent-2); }
+.footer a{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 .reveal{
   opacity:0;

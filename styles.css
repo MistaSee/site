@@ -331,6 +331,12 @@ main a:not(.button):focus-visible{
   text-decoration-thickness: 1.5px;
   transition: color 0.2s ease;
 }
+.chatbot-list .list-item p span{
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: inherit;
+  color: inherit;
+}
 
 .chatbot-list .list-item h3 a:hover,
 .chatbot-list .list-item h3 a:focus-visible{

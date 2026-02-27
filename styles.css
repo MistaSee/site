@@ -147,6 +147,9 @@ main{
 .hero{
   display:grid;
   gap:22px;
+}
+
+.page:not(.home) .hero{
   max-width:720px;
 }
 

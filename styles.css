@@ -154,7 +154,7 @@ main{
 }
 
 .home .hero{
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.25fr 0.75fr;
   gap:60px;
   align-items:center;
   max-width:1400px;

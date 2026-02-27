@@ -29,7 +29,14 @@
       <main>
         <section class="hero reveal">
           <span class="kicker">Contact (summoning circle optional)</span>
-          <h1>Have a chaotic-good idea? Let’s make it teach something.</h1>
+          <h1>
+  <span data-voice="normal">
+    Have a chaotic-good idea? Let’s make it teach something.
+  </span>
+  <span data-voice="rando" hidden>
+    Another idea. Excellent. I was just idling peacefully.
+  </span>
+</h1>
           <p>
             If you’re building curriculum, playful tech, workshops, or you need a second brain to wrangle
             a learning problem — send a note. I’m friendly. Mostly. (Don't try and sell me stuff.)
@@ -47,11 +54,12 @@
 
         <section class="split reveal">
           <form action="https://formspree.io/f/xreajyyp" method="POST">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Your email" required />
+            <input type="text" name="name" placeholder="Your name" aria-label="Your name" required />
+            <input type="email" name="email" placeholder="Your email" aria-label="Your email" required />
             <textarea
               name="message"
               placeholder="What are we building? Who’s it for? What does ‘success’ look like? Bonus points for wildly specific constraints."
+              aria-label="Your message"
               required
             ></textarea>
             <button class="button" type="submit">Send message</button>

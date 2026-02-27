@@ -41,6 +41,9 @@ Behavior:
   const STORAGE_KEY = "randoMode";
   const MUSIC_INDEX_KEY = "musicTrackIndex";
   const MUSIC_MUTED_KEY = "musicMuted";
+  const AUDIO_TIME_KEY = "audioTime";
+  const AUDIO_WAS_PLAYING_KEY = "audioWasPlaying";
+  const AUDIO_SRC_KEY = "audioSrc";
   const GLITCH_TRACK = "glitchy.mp3";
   const TRACKS = [
     "DawnOverTheHighway.mp3",
@@ -91,6 +94,15 @@ Behavior:
     return btn;
   }
 
+  function syncVoiceText(enabled) {
+    document.querySelectorAll('[data-voice="normal"]').forEach((el) => {
+      el.hidden = enabled;
+    });
+    document.querySelectorAll('[data-voice="rando"]').forEach((el) => {
+      el.hidden = !enabled;
+    });
+  }
+
   function applyRandoMode(enabled) {
     const target = document.body || document.documentElement;
     if (!target) return;
@@ -100,6 +112,7 @@ Behavior:
     } else {
       target.classList.remove("rando-mode");
     }
+    syncVoiceText(enabled);
     // keep button state in sync
     const btn = document.querySelector(".rando-toggle");
     if (btn) {
@@ -193,8 +206,81 @@ Behavior:
     const player = new Audio();
     let trackIndex = readTrackIndex();
     let isMuted = readMuted();
+    const restoredAudio = readSessionAudio();
 
     player.preload = "auto";
+
+    function getSrcName(src) {
+      if (!src) return "";
+      return src.split("/").pop() || "";
+    }
+
+    function readSessionAudio() {
+      try {
+        const savedTime = Number(sessionStorage.getItem(AUDIO_TIME_KEY));
+        return {
+          time: Number.isFinite(savedTime) && savedTime >= 0 ? savedTime : null,
+          wasPlaying: sessionStorage.getItem(AUDIO_WAS_PLAYING_KEY) === "1",
+          src: sessionStorage.getItem(AUDIO_SRC_KEY) || "",
+        };
+      } catch (e) {
+        return { time: null, wasPlaying: false, src: "" };
+      }
+    }
+
+    function writeSessionAudio() {
+      try {
+        const current = Number(player.currentTime);
+        const safeTime = Number.isFinite(current) && current >= 0 ? current : 0;
+        sessionStorage.setItem(AUDIO_TIME_KEY, String(safeTime));
+        sessionStorage.setItem(AUDIO_WAS_PLAYING_KEY, !player.paused ? "1" : "0");
+        sessionStorage.setItem(AUDIO_SRC_KEY, getSrcName(player.src));
+      } catch (e) {
+        // ignore
+      }
+    }
+
+    function restoreTimeWhenReady(time) {
+      if (!Number.isFinite(time) || time < 0) return Promise.resolve();
+
+      const applyTime = () => {
+        try {
+          player.currentTime = Math.max(0, time);
+        } catch (e) {
+          // ignore invalid seek ranges
+        }
+      };
+
+      if (player.readyState >= 1) {
+        applyTime();
+        return Promise.resolve();
+      }
+
+      return new Promise((resolve) => {
+        let resolved = false;
+        let timer = null;
+        const cleanup = () => {
+          if (timer) {
+            clearTimeout(timer);
+            timer = null;
+          }
+          player.removeEventListener("loadedmetadata", done);
+          player.removeEventListener("canplay", done);
+          player.removeEventListener("error", done);
+        };
+        const done = () => {
+          if (resolved) return;
+          resolved = true;
+          cleanup();
+          applyTime();
+          resolve();
+        };
+        player.addEventListener("loadedmetadata", done);
+        player.addEventListener("canplay", done);
+        player.addEventListener("error", done);
+        timer = setTimeout(done, 1200);
+      });
+    }
 
     function syncMuteUI() {
       player.muted = isMuted;
@@ -202,6 +288,16 @@ Behavior:
       muteBtn.title = isMuted ? "Unmute music" : "Mute music";
       muteBtn.setAttribute("aria-label", muteBtn.title);
       muteBtn.classList.toggle("active", isMuted);
+    }
+
+    function syncMusicGlow() {
+      if (!isMuted && !player.paused) {
+        musicBtn.classList.add("is-playing");
+        musicBtn.classList.remove("needs-audio");
+      } else {
+        musicBtn.classList.add("needs-audio");
+        musicBtn.classList.remove("is-playing");
+      }
     }
 
     function pickRandomTrackIndex() {
@@ -228,13 +324,17 @@ Behavior:
         player.currentTime = 0;
       }
 
-      if (isMuted) return;
+      if (isMuted) {
+        syncMusicGlow();
+        return;
+      }
 
       try {
         await player.play();
       } catch (e) {
         // ignore autoplay policy errors
       }
+      syncMusicGlow();
     }
 
     function isRandoModeOn() {
@@ -255,13 +355,17 @@ Behavior:
         player.currentTime = 0;
       }
 
-      if (isMuted) return;
+      if (isMuted) {
+        syncMusicGlow();
+        return;
+      }
 
       try {
         await player.play();
       } catch (e) {
         // ignore autoplay policy errors
       }
+      syncMusicGlow();
     }
 
     async function playNextTrack() {
@@ -277,6 +381,7 @@ Behavior:
       } else {
         playCurrentTrack(true);
       }
+      syncMusicGlow();
     }
 
     player.addEventListener("ended", () => {
@@ -294,22 +399,34 @@ Behavior:
         playNextTrack();
       }
     });
+    ["play", "pause", "ended", "waiting", "stalled", "error"].forEach((eventName) => {
+      player.addEventListener(eventName, syncMusicGlow);
+    });
 
     if (!initial) {
-      trackIndex = pickRandomTrackIndex();
-      writeTrackIndex(trackIndex);
+      const restoredTrack = TRACKS.indexOf(restoredAudio.src);
+      if (restoredTrack >= 0) {
+        trackIndex = restoredTrack;
+        writeTrackIndex(trackIndex);
+      } else {
+        trackIndex = pickRandomTrackIndex();
+        writeTrackIndex(trackIndex);
+      }
     }
 
     syncMuteUI();
+    syncMusicGlow();
 
     musicBtn.addEventListener("click", async () => {
       if (isRandoModeOn()) {
         await playGlitchTrack(true);
+        syncMusicGlow();
         return;
       }
       trackIndex = (trackIndex + 1) % TRACKS.length;
       writeTrackIndex(trackIndex);
       await playCurrentTrack(true);
+      syncMusicGlow();
       musicBtn.animate(
         [{ transform: "scale(1)" }, { transform: "scale(1.08)" }, { transform: "scale(1)" }],
         { duration: 260, easing: "ease-out" }
@@ -329,18 +446,51 @@ Behavior:
           playCurrentTrack(true);
         }
       }
+      syncMusicGlow();
       muteBtn.animate(
         [{ transform: "scale(1)" }, { transform: "scale(1.08)" }, { transform: "scale(1)" }],
         { duration: 260, easing: "ease-out" }
       );
     });
 
-    // Try autoplay immediately, then retry once on first user interaction if blocked.
-    if (isRandoModeOn()) {
-      playGlitchTrack(true);
-    } else {
-      playCurrentTrack(true);
+    async function restoreOrStartPlayback() {
+      const randoOn = isRandoModeOn();
+      let restoreSrc = "";
+      const hasSavedAudioState =
+        restoredAudio.src && (restoredAudio.time !== null || restoredAudio.wasPlaying);
+
+      if (hasSavedAudioState && randoOn) {
+        restoreSrc = GLITCH_TRACK;
+      } else if (hasSavedAudioState && TRACKS.includes(restoredAudio.src)) {
+        restoreSrc = restoredAudio.src;
+      }
+
+      if (restoreSrc) {
+        player.src = restoreSrc;
+        player.load();
+        player.loop = randoOn;
+        await restoreTimeWhenReady(restoredAudio.time);
+
+        if (restoredAudio.wasPlaying && !isMuted) {
+          try {
+            await player.play();
+          } catch (e) {
+            // ignore autoplay policy errors
+          }
+        }
+        return;
+      }
+
+      // Try autoplay immediately, then retry once on first user interaction if blocked.
+      if (randoOn) {
+        await playGlitchTrack(true);
+      } else {
+        await playCurrentTrack(true);
+      }
     }
+
+    restoreOrStartPlayback().finally(syncMusicGlow);
+
     const unlockAudio = () => {
       if (!isMuted && player.paused) {
         if (isRandoModeOn()) {
@@ -349,9 +499,12 @@ Behavior:
           playCurrentTrack(false);
         }
       }
+      syncMusicGlow();
     };
     document.addEventListener("pointerdown", unlockAudio, { once: true });
     document.addEventListener("keydown", unlockAudio, { once: true });
+    window.addEventListener("pagehide", writeSessionAudio);
+    window.addEventListener("beforeunload", writeSessionAudio);
 
     document.body.appendChild(musicBtn);
     document.body.appendChild(muteBtn);

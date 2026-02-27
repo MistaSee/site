@@ -174,7 +174,7 @@ main{
 
 .home .hero-image img{
   width:100%;
-  max-width:320px;
+  max-width:340px;
   height:auto;
   border-radius:18px;
   border:1px solid var(--border);

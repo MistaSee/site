@@ -243,8 +243,9 @@ main{
 }
 
 .home .hero h1{
-  line-height:1.09;
-  max-width: 19.4ch;
+  line-height:1.08;
+  max-width: 19.2ch;
+  text-wrap: initial;
 }
 
 .hero p{

@@ -251,6 +251,10 @@ main{
   text-wrap: initial;
 }
 
+body.page.home:not(.rando-mode) .hero h1 .hero-payoff{
+  color: var(--accent-2);
+}
+
 .hero p{
   font-size:1.1rem;
   color:var(--muted);

@@ -15,20 +15,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap");
 
 :root{
-  --bg-1:#0a0b16;
-  --bg-2:#141329;
-  --bg-3:#1b1a3a;
+  --color-ink:#0F1720;
+  --color-paper:#F6F3EC;
+  --color-oxide:#0F766E;
+  --color-signal:#F05A4A;
+  --color-brass:#B88A3B;
+  --color-mist:#D9E5E2;
 
-  --ink:#f6f3ff;
-  --muted:#c3b8ee;
+  --bg-1:var(--color-paper);
+  --bg-2:var(--color-mist);
+  --bg-3:var(--color-paper);
 
-  --accent-1:#ff5f8a;
-  --accent-2:#59e3ff;
-  --accent-3:#f9cf58;
+  --ink:var(--color-ink);
+  --muted:rgba(15, 23, 32, 0.72);
 
-  --card: rgba(24, 21, 47, 0.85);
-  --border: rgba(255,255,255,0.08);
-  --glow: 0 0 30px rgba(89,227,255,0.2);
+  --accent-1:var(--color-signal);
+  --accent-2:var(--color-oxide);
+  --accent-3:var(--color-brass);
+
+  --card: rgba(246, 243, 236, 0.82);
+  --border: rgba(15, 118, 110, 0.16);
+  --glow: 0 0 30px rgba(15, 118, 110, 0.18);
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -38,8 +45,8 @@ html, body { height:100%; }
 body{
   font-family:"Space Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
   background:
-    radial-gradient(circle at top, rgba(89,227,255,0.15), transparent 55%),
-    radial-gradient(circle at 20% 20%, rgba(255,95,138,0.2), transparent 50%),
+    radial-gradient(circle at top, rgba(15, 118, 110, 0.14), transparent 55%),
+    radial-gradient(circle at 20% 20%, rgba(240, 90, 74, 0.10), transparent 50%),
     linear-gradient(135deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
   color:var(--ink);
   min-height:100vh;
@@ -48,7 +55,7 @@ body{
 
 a{ color:inherit; text-decoration:none; }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-  outline: 3px solid rgba(89,227,255,0.25);
+  outline: 3px solid rgba(15, 118, 110, 0.25);
   outline-offset: 3px;
 }
 
@@ -70,11 +77,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .page::before{
   background:
-    linear-gradient(120deg, rgba(89,227,255,0.08), transparent 45%),
-    linear-gradient(260deg, rgba(255,95,138,0.10), transparent 50%);
+    linear-gradient(120deg, rgba(15, 118, 110, 0.07), transparent 45%),
+    linear-gradient(260deg, rgba(240, 90, 74, 0.06), transparent 50%);
 }
 .page::after{
-  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(15, 23, 32, 0.05) 1px, transparent 1px);
   background-size: 100% 22px;
   opacity:0.2;
 }
@@ -97,7 +104,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   z-index:10;
 
   backdrop-filter: blur(16px);
-  background: rgba(10,11,22,0.65);
+  background: rgba(246, 243, 236, 0.72);
   border-bottom: 1px solid var(--border);
 }
 
@@ -224,7 +231,7 @@ main{
   border-radius:999px;
   border:1px solid transparent;
   background: linear-gradient(120deg, var(--accent-1), var(--accent-2));
-  color:#090914;
+  color:var(--ink);
   font-weight:600;
   letter-spacing:0.08em;
   text-transform:uppercase;
@@ -234,7 +241,7 @@ main{
 .button.secondary{
   background:transparent;
   color:var(--ink);
-  border-color: rgba(255,255,255,0.3);
+  border-color: rgba(15, 118, 110, 0.28);
   box-shadow:none;
 }
 
@@ -300,8 +307,8 @@ main{
 
 .media-frame{
   border-radius:24px;
-  border: 1px dashed rgba(255,255,255,0.3);
-  background: linear-gradient(135deg, rgba(89,227,255,0.08), rgba(255,95,138,0.10));
+  border: 1px dashed rgba(15, 118, 110, 0.26);
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(240, 90, 74, 0.08));
   padding:28px;
   min-height:260px;
   display:grid;
@@ -354,7 +361,7 @@ main{
   padding:16px 20px;
   border-radius:16px;
   border: 1px solid var(--border);
-  background: rgba(12,12,26,0.6);
+  background: rgba(246, 243, 236, 0.76);
   display:grid;
   gap:8px;
 }
@@ -370,7 +377,7 @@ main a:not(.button){
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1.5px;
-  text-decoration-color: rgba(89,227,255,0.75);
+  text-decoration-color: rgba(15, 118, 110, 0.75);
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
@@ -430,7 +437,7 @@ main a:not(.button):focus-visible{
   scroll-snap-type: x mandatory;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: rgba(12,12,26,0.55);
+  background: rgba(217, 229, 226, 0.55);
   padding: 12px;
 }
 
@@ -447,7 +454,7 @@ main a:not(.button):focus-visible{
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border);
-  background: rgba(0,0,0,0.35);
+  background: rgba(217, 229, 226, 0.48);
 }
 
 .talk-embed iframe{
@@ -466,8 +473,8 @@ input, textarea{
   width:100%;
   padding:12px 14px;
   border-radius:12px;
-  border:1px solid rgba(255,255,255,0.2);
-  background: rgba(9,8,20,0.8);
+  border:1px solid rgba(15, 118, 110, 0.22);
+  background: rgba(246, 243, 236, 0.92);
   color:var(--ink);
   font-family:inherit;
 }
@@ -518,8 +525,8 @@ textarea{ min-height:140px; }
   width:44px;
   height:44px;
   border-radius:999px;
-  border:2px solid rgba(255,255,255,0.12);
-  background: rgba(0,0,0,0.35);
+  border:2px solid rgba(15, 23, 32, 0.12);
+  background: rgba(246, 243, 236, 0.72);
   display:grid;
   place-items:center;
   z-index:9999;
@@ -541,8 +548,8 @@ textarea{ min-height:140px; }
   opacity: 0.95;
 }
 .rando-toggle.active{
-  background: rgba(0,0,0,0.6);
-  border-color: rgba(255,255,255,0.28);
+  background: rgba(217, 229, 226, 0.88);
+  border-color: rgba(15, 118, 110, 0.28);
 }
 .rando-toggle.active .rando-toggle__dot{
   transform: scale(1.12);
@@ -556,9 +563,9 @@ textarea{ min-height:140px; }
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  border: 2px solid rgba(255,255,255,0.12);
-  background: rgba(0,0,0,0.35);
-  color: #fff;
+  border: 2px solid rgba(15, 23, 32, 0.12);
+  background: rgba(246, 243, 236, 0.72);
+  color: var(--ink);
   display: grid;
   place-items: center;
   z-index: 9999;
@@ -576,9 +583,9 @@ textarea{ min-height:140px; }
   top: 50%;
   left: calc(100% + 8px);
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(15, 23, 32, 0.92);
+  color: var(--color-paper);
+  border: 1px solid rgba(217, 229, 226, 0.6);
   border-radius: 8px;
   padding: 6px 8px;
   font-size: 12px;
@@ -592,8 +599,8 @@ textarea{ min-height:140px; }
   opacity: 1;
 }
 .music-toggle.needs-audio{
-  border-color: rgba(89,227,255,0.5);
-  box-shadow: 0 0 0 rgba(89,227,255,0.0);
+  border-color: rgba(15, 118, 110, 0.42);
+  box-shadow: 0 0 0 rgba(15, 118, 110, 0.0);
   animation: music-toggle-pulse 1.7s ease-in-out infinite;
 }
 .music-toggle.is-playing{
@@ -602,10 +609,10 @@ textarea{ min-height:140px; }
 }
 @keyframes music-toggle-pulse{
   0%, 100%{
-    box-shadow: 0 0 0 0 rgba(89,227,255,0.0);
+    box-shadow: 0 0 0 0 rgba(15, 118, 110, 0.0);
   }
   50%{
-    box-shadow: 0 0 18px 2px rgba(89,227,255,0.42);
+    box-shadow: 0 0 18px 2px rgba(15, 118, 110, 0.32);
   }
 }
 
@@ -616,9 +623,9 @@ textarea{ min-height:140px; }
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  border: 2px solid rgba(255,255,255,0.12);
-  background: rgba(0,0,0,0.35);
-  color: #fff;
+  border: 2px solid rgba(15, 23, 32, 0.12);
+  background: rgba(246, 243, 236, 0.72);
+  color: var(--ink);
   display: grid;
   place-items: center;
   z-index: 9999;
@@ -631,8 +638,8 @@ textarea{ min-height:140px; }
 .mute-toggle:hover{ transform: scale(1.08); }
 .mute-toggle:active{ transform: scale(0.98); }
 .mute-toggle.active{
-  background: rgba(0,0,0,0.6);
-  border-color: rgba(255,255,255,0.28);
+  background: rgba(217, 229, 226, 0.88);
+  border-color: rgba(15, 118, 110, 0.28);
 }
 
 /* =========================================================

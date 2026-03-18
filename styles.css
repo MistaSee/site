@@ -196,6 +196,12 @@ main{
   align-items:center;
 }
 
+@media (min-width: 961px) {
+  .home .hero-image{
+    transform: translateY(18px);
+  }
+}
+
 .home .hero-image img{
   width:100%;
   max-width:328px;
@@ -234,6 +240,12 @@ main{
   letter-spacing:-0.03em;
   line-height:1.13;
   max-width: 16.5ch;
+}
+
+.home .hero h1{
+  line-height:1.11;
+  max-width: 18.25ch;
+  text-wrap: balance;
 }
 
 .hero p{

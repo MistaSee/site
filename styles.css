@@ -187,6 +187,7 @@ main{
 .home .hero-content{
   display:grid;
   gap:22px;
+  max-width: 44rem;
 }
 
 .home .hero-image{
@@ -197,15 +198,15 @@ main{
 
 .home .hero-image img{
   width:100%;
-  max-width:340px;
+  max-width:328px;
   height:auto;
   border-radius:10px;
   border:1px solid rgba(15, 23, 32, 0.18);
   box-shadow:
-    0 0 0 6px rgba(246, 243, 236, 0.84),
-    0 0 0 7px rgba(184, 138, 59, 0.26),
-    14px 14px 0 rgba(15, 23, 32, 0.08),
-    0 24px 42px rgba(15, 23, 32, 0.12);
+    0 0 0 5px rgba(246, 243, 236, 0.84),
+    0 0 0 6px rgba(184, 138, 59, 0.24),
+    10px 10px 0 rgba(15, 23, 32, 0.07),
+    0 22px 38px rgba(15, 23, 32, 0.11);
 }
 
 @media (max-width: 960px) {
@@ -228,11 +229,11 @@ main{
 
 .hero h1{
   font-family:"Azeret Mono","Orbitron",sans-serif;
-  font-size: clamp(2.35rem, 3.6vw, 3.5rem);
+  font-size: clamp(2.45rem, 3.8vw, 3.65rem);
   font-weight:600;
-  letter-spacing:-0.028em;
-  line-height:1.16;
-  max-width: 12.5ch;
+  letter-spacing:-0.03em;
+  line-height:1.13;
+  max-width: 16.5ch;
 }
 
 .hero p{

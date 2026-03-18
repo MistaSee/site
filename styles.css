@@ -186,7 +186,7 @@ main{
 
 .home .hero-content{
   display:grid;
-  gap:22px;
+  gap:18px;
   max-width: 44rem;
 }
 

@@ -15,20 +15,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap");
 
 :root{
-  --bg-1:#F6F3EC;
-  --bg-2:#D9E5E2;
-  --bg-3:#F6F3EC;
+  --bg-1:#0a0b16;
+  --bg-2:#141329;
+  --bg-3:#1b1a3a;
 
-  --ink:#0F1720;
-  --muted:rgba(15,23,32,0.72);
+  --ink:#f6f3ff;
+  --muted:#c3b8ee;
 
-  --accent-1:#F05A4A;
-  --accent-2:#0F766E;
-  --accent-3:#B88A3B;
+  --accent-1:#ff5f8a;
+  --accent-2:#59e3ff;
+  --accent-3:#f9cf58;
 
-  --card: rgba(246,243,236,0.84);
-  --border: rgba(15,23,32,0.12);
-  --glow: 0 0 30px rgba(15,118,110,0.18);
+  --card: rgba(24, 21, 47, 0.85);
+  --border: rgba(255,255,255,0.08);
+  --glow: 0 0 30px rgba(89,227,255,0.2);
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -38,8 +38,8 @@ html, body { height:100%; }
 body{
   font-family:"Space Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
   background:
-    radial-gradient(circle at top, rgba(15,118,110,0.14), transparent 55%),
-    radial-gradient(circle at 20% 20%, rgba(240,90,74,0.12), transparent 50%),
+    radial-gradient(circle at top, rgba(89,227,255,0.15), transparent 55%),
+    radial-gradient(circle at 20% 20%, rgba(255,95,138,0.2), transparent 50%),
     linear-gradient(135deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
   color:var(--ink);
   min-height:100vh;
@@ -48,7 +48,7 @@ body{
 
 a{ color:inherit; text-decoration:none; }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-  outline: 3px solid rgba(15,118,110,0.24);
+  outline: 3px solid rgba(89,227,255,0.25);
   outline-offset: 3px;
 }
 
@@ -70,11 +70,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .page::before{
   background:
-    linear-gradient(120deg, rgba(15,118,110,0.08), transparent 45%),
-    linear-gradient(260deg, rgba(240,90,74,0.08), transparent 50%);
+    linear-gradient(120deg, rgba(89,227,255,0.08), transparent 45%),
+    linear-gradient(260deg, rgba(255,95,138,0.10), transparent 50%);
 }
 .page::after{
-  background-image: linear-gradient(rgba(15,23,32,0.06) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 100% 22px;
   opacity:0.2;
 }
@@ -97,7 +97,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   z-index:10;
 
   backdrop-filter: blur(16px);
-  background: rgba(246,243,236,0.76);
+  background: rgba(10,11,22,0.65);
   border-bottom: 1px solid var(--border);
 }
 
@@ -147,7 +147,48 @@ main{
 .hero{
   display:grid;
   gap:22px;
+}
+
+.page:not(.home) .hero{
   max-width:720px;
+}
+
+.home .hero{
+  grid-template-columns: 1.32fr 0.68fr;
+  gap:60px;
+  align-items:center;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.home .hero-content{
+  display:grid;
+  gap:22px;
+}
+
+.home .hero-image{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.home .hero-image img{
+  width:100%;
+  max-width:340px;
+  height:auto;
+  border-radius:18px;
+  border:1px solid var(--border);
+  box-shadow:0 30px 80px rgba(0,0,0,0.45);
+}
+
+@media (max-width: 960px) {
+  .home .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home .hero-image {
+    order: -1;
+  }
 }
 
 .kicker{
@@ -182,8 +223,8 @@ main{
   padding:12px 22px;
   border-radius:999px;
   border:1px solid transparent;
-  background: linear-gradient(120deg, var(--accent-1), var(--accent-3));
-  color:var(--ink);
+  background: linear-gradient(120deg, var(--accent-1), var(--accent-2));
+  color:#090914;
   font-weight:600;
   letter-spacing:0.08em;
   text-transform:uppercase;
@@ -193,7 +234,7 @@ main{
 .button.secondary{
   background:transparent;
   color:var(--ink);
-  border-color: rgba(15,23,32,0.18);
+  border-color: rgba(255,255,255,0.3);
   box-shadow:none;
 }
 
@@ -225,6 +266,24 @@ main{
 .card h3{ font-size:1.15rem; }
 .card p{ color:var(--muted); font-size:0.98rem; }
 
+.card-image{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.card-image.brainrot-image{
+  width: calc(100% + 44px);
+  margin-left: -22px;
+  margin-right: -22px;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
 .tag{
   font-size:0.75rem;
   letter-spacing:0.2em;
@@ -241,8 +300,8 @@ main{
 
 .media-frame{
   border-radius:24px;
-  border: 1px dashed rgba(15,118,110,0.24);
-  background: linear-gradient(135deg, rgba(15,118,110,0.08), rgba(240,90,74,0.08));
+  border: 1px dashed rgba(255,255,255,0.3);
+  background: linear-gradient(135deg, rgba(89,227,255,0.08), rgba(255,95,138,0.10));
   padding:28px;
   min-height:260px;
   display:grid;
@@ -260,13 +319,42 @@ main{
   border: 1px solid var(--border);
 }
 
+.media-frame.media-frame-image{
+  padding: 12px;
+  overflow: hidden;
+}
+
+.media-frame.media-frame-image .headshot{
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+
+.home-poster{
+  align-self: stretch;
+  min-height: 560px;
+  padding: 10px;
+  background-image: url("AI_Warning_Poster.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.home-poster .headshot{
+  display: none;
+}
+
 .list{ display:grid; gap:16px; }
 
 .list-item{
   padding:16px 20px;
   border-radius:16px;
   border: 1px solid var(--border);
-  background: rgba(246,243,236,0.76);
+  background: rgba(12,12,26,0.6);
   display:grid;
   gap:8px;
 }
@@ -277,6 +365,21 @@ main{
   letter-spacing:0.2em;
 }
 
+main a:not(.button){
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgba(89,227,255,0.75);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+main a:not(.button):hover,
+main a:not(.button):focus-visible{
+  color: var(--accent-1);
+  text-decoration-color: var(--accent-1);
+}
+
 .chatbot-list .list-item h3 a{
   color: var(--accent-2);
   text-decoration: underline;
@@ -284,10 +387,16 @@ main{
   text-decoration-thickness: 1.5px;
   transition: color 0.2s ease;
 }
+.chatbot-list .list-item p span{
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: inherit;
+  color: inherit;
+}
 
 .chatbot-list .list-item h3 a:hover,
 .chatbot-list .list-item h3 a:focus-visible{
-  color: var(--ink);
+  color: var(--accent-1);
 }
 
 .words-list .list-item img{
@@ -299,16 +408,14 @@ main{
 }
 
 .words-list .list-item h3 a{
-  color: var(--accent-2);
+  color: var(--accent-3);
   text-decoration: underline;
-  text-decoration-color: var(--accent-3);
   text-underline-offset: 3px;
 }
 
 .words-list .list-item h3 a:hover,
 .words-list .list-item h3 a:focus-visible{
-  color: var(--ink);
-  text-decoration-color: var(--accent-1);
+  color: var(--accent-2);
 }
 
 .talks-marquee{
@@ -323,7 +430,7 @@ main{
   scroll-snap-type: x mandatory;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: rgba(217,229,226,0.62);
+  background: rgba(12,12,26,0.55);
   padding: 12px;
 }
 
@@ -340,7 +447,7 @@ main{
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border);
-  background: rgba(15,23,32,0.08);
+  background: rgba(0,0,0,0.35);
 }
 
 .talk-embed iframe{
@@ -359,8 +466,8 @@ input, textarea{
   width:100%;
   padding:12px 14px;
   border-radius:12px;
-  border:1px solid rgba(15,118,110,0.22);
-  background: rgba(246,243,236,0.9);
+  border:1px solid rgba(255,255,255,0.2);
+  background: rgba(9,8,20,0.8);
   color:var(--ink);
   font-family:inherit;
 }
@@ -378,6 +485,10 @@ textarea{ min-height:140px; }
   color:var(--muted);
 }
 .footer a{ color:var(--accent-2); }
+.footer a{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 .reveal{
   opacity:0;
@@ -479,6 +590,23 @@ textarea{ min-height:140px; }
 .music-toggle:hover::after,
 .music-toggle:focus-visible::after{
   opacity: 1;
+}
+.music-toggle.needs-audio{
+  border-color: rgba(89,227,255,0.5);
+  box-shadow: 0 0 0 rgba(89,227,255,0.0);
+  animation: music-toggle-pulse 1.7s ease-in-out infinite;
+}
+.music-toggle.is-playing{
+  animation: none;
+  box-shadow: none;
+}
+@keyframes music-toggle-pulse{
+  0%, 100%{
+    box-shadow: 0 0 0 0 rgba(89,227,255,0.0);
+  }
+  50%{
+    box-shadow: 0 0 18px 2px rgba(89,227,255,0.42);
+  }
 }
 
 .mute-toggle{

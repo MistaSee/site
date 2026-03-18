@@ -243,9 +243,11 @@ main{
 }
 
 .home .hero h1{
-  font-size: clamp(2.45rem, 3.7vw, 3.55rem);
-  line-height:1.08;
-  max-width: 19.2ch;
+  font-family:"Azeret Mono", monospace;
+  font-size: clamp(2.2rem, 3.15vw, 3.2rem);
+  line-height:1.06;
+  letter-spacing:-0.035em;
+  max-width: 20ch;
   text-wrap: initial;
 }
 

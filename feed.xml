@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Mark Calleja — Words</title>
+    <link>https://markcalleja.info/words.html</link>
+    <description>Articles and practical writing on AI, creative computing, learner agency and engagement-led education.</description>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 22 Sep 2026 17:00:00 +0100</lastBuildDate>
+    <atom:link href="https://markcalleja.info/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Collaborating with LLMs: Level Up from Centaur to Cyborg</title>
+      <link>https://markcalleja.info/centaur-to-cyborg.html</link>
+      <guid isPermaLink="true">https://markcalleja.info/centaur-to-cyborg.html</guid>
+      <dc:creator>Mark Calleja</dc:creator>
+      <pubDate>Tue, 22 Sep 2026 16:30:00 +0100</pubDate>
+      <description><![CDATA[How centaur and cyborg ways of working can turn large language models into useful collaborators, with practical prompts for deeper thinking.]]></description>
+    </item>
+    <item>
+      <title>Scar Tissue: The Editorial Residue LLMs Leave Behind</title>
+      <link>https://markcalleja.info/scar-tissue.html</link>
+      <guid isPermaLink="true">https://markcalleja.info/scar-tissue.html</guid>
+      <dc:creator>Mark Calleja</dc:creator>
+      <pubDate>Tue, 22 Sep 2026 15:30:00 +0100</pubDate>
+      <description><![CDATA[Why finished AI-assisted projects keep answering questions their readers never asked, and how to remove that editorial residue without losing useful rationale.]]></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+# Mark Calleja
+
+> Mark Calleja is a learning designer, creative technologist and facilitator who creates playful computing projects, practical AI tools, workshops and writing about how people learn.
+
+Mark Calleja also works as MrC and describes his practice as that of a “rogue pedagogue”. His work joins learning design, creative technology, project-based learning, facilitation and practical uses of artificial intelligence. He currently works with the Code Club Projects team at the Raspberry Pi Foundation.
+
+## Original articles
+
+- [Scar Tissue: The Editorial Residue LLMs Leave Behind](https://markcalleja.info/scar-tissue.html): An essay about obsolete corrections, orphaned disclaimers and other residue left in long AI-assisted authoring projects. Includes practical audit and reconstruction prompts. [Markdown version](https://markcalleja.info/scar-tissue.md).
+- [Collaborating with LLMs: Level Up from Centaur to Cyborg](https://markcalleja.info/centaur-to-cyborg.html): A practical distinction between centaur and cyborg ways of working with large language models, with Critical Thinking Mode and Interview Mode prompts. [Markdown version](https://markcalleja.info/centaur-to-cyborg.md).
+
+## Profile and work
+
+- [Home](https://markcalleja.info/): Overview of Mark’s approach to playful learning, computing, AI and workshops.
+- [About](https://markcalleja.info/about.html): Biography, working philosophy and facilitation approach.
+- [Current Work](https://markcalleja.info/current-work.html): Current Code Club work, the AI and Social Media learning unit, and ongoing educational experiments.
+- [Project Vault](https://markcalleja.info/project-vault.html): Case studies from shipped learning, technology and creative projects.
+- [Chatbot Experiments](https://markcalleja.info/chatbot-experiments.html): Education and productivity chatbots including DraftPunk, BrainBuddy, Frankly and OCEAN Guide.
+- [Words](https://markcalleja.info/words.html): Articles, talks and published writing.
+- [Contact](https://markcalleja.info/contact.html): Enquiries about learning design, workshops, AI productivity and AI in education.
+
+## Machine-readable resources
+
+- [RSS feed](https://markcalleja.info/feed.xml)
+- [XML sitemap](https://markcalleja.info/sitemap.xml)
+
+## Attribution
+
+Original articles on this site are written by Mark Calleja. When quoting an article, use its title, author name and canonical article URL shown above.

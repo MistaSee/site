@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Scar Tissue examines the editorial residue left behind in long AI-assisted authoring projects, with practical prompts for finding and removing it." />
+    <title>Scar Tissue: The Editorial Residue LLMs Leave Behind | Mark Calleja</title>
+    <link id="site-favicon" rel="icon" type="image/png" href="gbc.png" />
+    <link rel="stylesheet" href="styles.css?v=20260922-scar-tissue" />
+  </head>
+  <body class="page article-page">
+    <div class="wrapper">
+      <header class="nav">
+        <div class="brand">Mark Calleja</div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a class="active" href="words.html">Words</a>
+          <a href="current-work.html">Current Work</a>
+          <a href="project-vault.html">Project Vault</a>
+          <a href="chatbot-experiments.html">Chatbot Experiments</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero article-hero reveal">
+          <span class="kicker">Words · Article &amp; practical prompts</span>
+          <h1>Scar Tissue: The Editorial Residue LLMs Leave Behind</h1>
+          <p>
+            Why finished AI-assisted projects keep answering questions their
+            readers never asked—and how to remove the debris without losing
+            useful rationale.
+          </p>
+          <div class="cta-row">
+            <a class="button secondary" href="words.html">Back to Words</a>
+          </div>
+        </section>
+
+        <article class="article-copy reveal">
+          <p class="article-lede">I found it lurking in the instructions for an online coding project:</p>
+          <p><em>You do not need to add a timer.</em></p>
+          <p>Perfectly clear. Perfectly accurate. Also completely weird.</p>
+          <p>Nothing else in the project mentioned a timer. Learners were never asked to create one, the starter code did not contain one, and the finished game did not use one. A countdown had existed in an early draft, but the game had since been redesigned to end when the player reached the exit.</p>
+          <p>The sentence was not helping learners understand the current project. It was reassuring them that they did not need to complete a task they had never been given.</p>
+          <p>It was arguing with a ghost.</p>
+          <p>It was <strong>scar tissue.</strong></p>
+          <p>This happens surprisingly often when you manage a large project through an extended conversation with a large language model. Corrections leave behind disclaimers. Source conflicts leave behind explanations of how they were resolved. Instructions written for the model resurface as advice to the reader. The subject you discussed for an hour suddenly receives six times as much space as something more important.</p>
+          <p>None of it necessarily looks wrong, which is precisely what makes it dangerous.</p>
+          <h3>What is editorial residue?</h3>
+          <p>I use <strong>editorial residue</strong> to mean:</p>
+          <p><strong>Authoring material that remains in a reader-facing artefact after its authoring function has ended.</strong></p>
+          <p>During development, you need to compare sources, challenge assumptions, test interpretations and explain decisions. This is useful work, and you should keep doing it. The problem begins when the scaffolding gets bricked into the building.</p>
+          <p>Editorial residue takes several forms:</p>
+          <ul>
+          <li><strong>Dated corrections:</strong> “Updated from arrow keys on 1 September.”</li>
+          <li><strong>Historical apologies:</strong> “This section was previously only a placeholder.”</li>
+          <li><strong>Orphaned disclaimers:</strong> “You do not need to add a timer.”</li>
+          <li><strong>Justification residue:</strong> “This step focuses on collision detection because movement was covered earlier.”</li>
+          <li><strong>Invisible arguments:</strong> “These two code examples should not be reconciled.”</li>
+          <li><strong>Provenance inflation:</strong> “The original learning objective explicitly requires this interaction.”</li>
+          <li><strong>Conversational sediment:</strong> “As discussed”, “worth noting” and “the good news is”.</li>
+          <li><strong>Compliance leakage:</strong> “This feature is working as intended.”</li>
+          </ul>
+          <p>Every one of these are examples I have found in my own work. These statements answer questions from the authoring process:</p>
+          <ul>
+          <li>What did the project used to say?</li>
+          <li>What was the writer worried about?</li>
+          <li>Which instruction did the model follow?</li>
+          <li>How was the disagreement between two sources resolved?</li>
+          <li>Why did we spend so much time on this section?</li>
+          </ul>
+          <p>The eventual reader has a different set of questions:</p>
+          <ul>
+          <li>What am I making?</li>
+          <li>What do I need to do?</li>
+          <li>Why does this work?</li>
+          <li>What happens next?</li>
+          </ul>
+          <p>Scar tissue appears when the finished artefact answers the first set rather than the second.</p>
+          <h3>Why LLM-managed projects are particularly vulnerable</h3>
+          <p>Editorial residue wasn't created with the invention of LLMs. Committee-written reports, repeatedly revised policies and long-lived software projects have always accumulated obsolete caveats, dead terminology and notes addressed to people who left the organisation three years ago.</p>
+          <p>LLMs accelerate their accumulation because they make it very easy, maybe even necessary, to collapse the authoring conversation and the publication environment into the same space.</p>
+          <p>Visible diligence is valuable during collaboration. When an error is corrected, explaining what changed builds confidence. When two sources disagree, showing how they were reconciled demonstrates that both were considered. When an instruction matters, repeating it makes compliance visible. That behaviour works in a conversation, but produces terrible content.</p>
+          <p>The resulting prose starts performing the audit instead of embodying its conclusions. Tell an LLM, “Make sure the revised project no longer asks learners to create a countdown timer,” and you may receive:</p>
+          <p><em>You do not need to add a timer in this project.</em></p>
+          <p>The instruction has technically been followed. The learner, however, has now been introduced to a mechanic they had no reason to consider. A clean version might simply say:</p>
+          <p><em>When your character reaches the exit, show the win screen.</em></p>
+          <p>The correction has now been absorbed into the current project rather than preserved as a rebuttal.</p>
+          <p>This gets worse as the conversation grows. Every rejected interpretation, repeated warning and carefully negotiated correction remains available in the context. The material we most want removed may become the most focused-on material in the whole exchange.</p>
+          <p>The finished artefact then inherits four things from the conversation:</p>
+          <ol>
+          <li><strong>Its audience.</strong> It addresses the collaborator rather than the eventual reader.</li>
+          <li><strong>Its history.</strong> Resolved corrections remain visible as corrections.</li>
+          <li><strong>Its attention.</strong> Heavily discussed subjects acquire disproportionate weight.</li>
+          <li><strong>Its scaffolding.</strong> Checklists, audits and source comparisons survive into the output.</li>
+          </ol>
+          <p>You are also poorly placed to catch the problem, because you were ‘in the room’ too. A sentence referring obliquely to last Tuesday’s disagreement makes perfect sense if you remember last Tuesday’s disagreement. If you don't, it's just confusion fuel.</p>
+          <p>Worse, it fails for the teacher, volunteer or learner who arrives six months later with only the published content to work from, and no idea what you mean. </p>
+          <h3>Scar tissue is not every kind of LLM mess</h3>
+          <p>There is a temptation to throw every oddity produced by an LLM-managed project into the same bucket. This is lazy and a bad idea. If “editorial residue” comes to mean “anything the model did badly”, the term stops helping us diagnose the problem.</p>
+          <p>An obsolete correction is editorial residue. An invented statistic is not; that is unsupported synthesis (aka hallucination). Two project files containing different values indicate state drift. Five pages repeating the same explanation suggest an ownership or information-architecture problem. These failures may belong in the same quality-control system, but they require different treatments.</p>
+          <p>A broader category (<strong>production artefacts</strong>, perhaps?) could include:</p>
+          <ul>
+          <li>editorial residue;</li>
+          <li>duplicated information;</li>
+          <li>stale dependencies;</li>
+          <li>attention distortion;</li>
+          <li>template-filling;</li>
+          <li>false precision;</li>
+          <li>invented terminology;</li>
+          <li>unresolved contradictions.</li>
+          </ul>
+          <p>Keep the boundaries reasonably firm. You can delete a historical aside; you cannot delete your way out of a project with no canonical source of truth.</p>
+          <h3>How to identify editorial residue</h3>
+          <p>Start with one question:</p>
+          <p><strong>Would a reader who was not present during development be worse off without this?</strong></p>
+          <p>Then apply the test:</p>
+          <p><strong>Would this material exist if the artefact were recreated today using only the current requirements and accepted facts?</strong></p>
+          <p>These questions catch statements that are <em>accurate</em> but functionally misplaced. They also work beyond writing copy: use them on code comments, learning objectives, project instructions, product specifications and technical documentation.</p>
+          <p>You can support this with a simple lexical scan. Flag phrases such as:</p>
+          <ul>
+          <li>previously, formerly, originally and corrected;</li>
+          <li>as discussed, as requested and as noted;</li>
+          <li>this file, this section and the purpose of this document;</li>
+          <li>according to the specification and the source says;</li>
+          <li>working as intended and deliberately left open;</li>
+          <li>no example currently exists and still to be determined.</li>
+          </ul>
+          <p>Treat hits on these things as warning signs to look closer, not automatic deletion rules. Sometimes history, provenance or rationale genuinely matters to the relationship between the material and reader.</p>
+          <p>Consider this note in a project’s source files:</p>
+          <p><em>Keyboard controls were kept after the old touchscreen version was removed.</em></p>
+          <p>Most of that information belongs in the commit history.</p>
+          <p>Now compare it with:</p>
+          <p><em>Keep every control keyboard-operable so learners who cannot use a pointer can complete the project.</em></p>
+          <p>The second version explains a constraint that still exists. A future author could make a serious accessibility mistake without it.</p>
+          <p>That is the boundary. Useful rationale explains why the present content must behave as it does. Editorial residue explains how the author arrived there.</p>
+          <p>Do not limit the audit to individual sentences. Look at the shape of the project as well. Compare step lengths, repeated concepts, numbers of examples and levels of technical detail against their actual importance.</p>
+          <p>Ask:</p>
+          <p><strong>If we had spent half as long discussing this subject, would it still occupy this much of the finished project?</strong></p>
+          <p>If not, conversational attention has distorted the product.</p>
+          <h3>Collect the evidence—but keep it lightweight</h3>
+          <p>Once you begin looking, you will find this stuff <em>everywhere</em>. One thing I’ve started to do is create a small production-artefact register so that recurring examples can improve the workflow rather than merely annoy you.</p>
+          <p>A useful entry might look like this:</p>
+          <pre class="prompt-block"><code>Location: projects/maze-game/step-4.md
+          Type: Orphaned disclaimer
+          Symptom: Tells learners that they do not need to add a timer
+          Reader harm: Introduces an abandoned mechanic with no relevance to the project
+          Current truth: The game ends when the character reaches the exit
+          Cause: Timer removed during an earlier redesign
+          Action: Replace with the current completion condition
+          Prevention: Render the revised step from accepted project facts in a clean context
+          </code></pre>
+          <p>Record examples that are recurring, subtle or damaging. Do not document every trivial deletion. That way lies an impressively complete register that nobody reads (which would be a very meta new layer of residue!)</p>
+          <p>Use the collection to identify patterns. A recurring problem should eventually produce one of the following:</p>
+          <ul>
+          <li>a lint rule;</li>
+          <li>a prompt change;</li>
+          <li>a canonical source;</li>
+          <li>an automated test;</li>
+          <li>a change to the editing workflow.</li>
+          </ul>
+          <p>The point is not to build a museum of mistakes; it’s to stop making the same ones each time.</p>
+          <h3>How to remove existing residue</h3>
+          <p>Most findings require one of six actions:</p>
+          <ol>
+          <li><strong>Delete</strong> material with no remaining reader-facing purpose.</li>
+          <li><strong>Rewrite</strong> defensive or historical language as a direct statement of current truth.</li>
+          <li><strong>Relocate</strong> useful history into a commit, issue, decision record or change log.</li>
+          <li><strong>Consolidate</strong> duplicated facts under one canonical owner.</li>
+          <li><strong>Reconcile</strong> contradictory sources and propagate the decision.</li>
+          <li><strong>Rebalance</strong> sections distorted by conversational attention.</li>
+          </ol>
+          <p>Be careful how you instruct the LLM during this process. “Remove all references to the old timer mechanic” repeats and foregrounds the very material you want to eliminate.</p>
+          <p>Instead, extract the accepted state:</p>
+          <pre class="prompt-block"><code>Current facts:
+          - The player guides a character through the maze.
+          - Reaching the exit completes the game.
+          - The game then displays a success message.
+          </code></pre>
+          <p>Now reconstruct the affected passage from those facts.</p>
+          <p>This distinction matters. Patching encourages the model to retain the argumentative skeleton of the existing text. Reconstruction gives it a clean foundation.</p>
+          <h3>Preventing scar tissue</h3>
+          <p>Prevention begins with separation.</p>
+          <p>Maintain three distinct information layers:</p>
+          <ul>
+          <li><strong>Authoring state:</strong> discussions, research, objections, alternatives and audit evidence.</li>
+          <li><strong>Current state:</strong> accepted facts, requirements, terminology and genuinely unresolved questions.</li>
+          <li><strong>Published artefact:</strong> the information required by the eventual reader.</li>
+          </ul>
+          <p>The publication pass should consume the current state. It should not inherit the entire authoring history.</p>
+          <p>Use a workflow like this:</p>
+          <ol>
+          <li>Investigate the problem with access to its history.</li>
+          <li>Decide what is currently true.</li>
+          <li>Record that decision in the appropriate log.</li>
+          <li>Update the canonical source.</li>
+          <li>Start a clean publication context.</li>
+          <li>Render the affected material for a named reader.</li>
+          <li>Verify the result without exposing the verifier to the preceding conversation.</li>
+          </ol>
+          <p>The reconciler, writer and verifier can all use the same LLM. They should not necessarily share the same context.</p>
+          <p>This also complicates the apparently sensible advice to “write the log entry first”. Do that - but keep the publication pass separate. If you write a detailed account of the correction and immediately ask the same context for polished prose, you may simply have made the unwanted history more prominent.</p>
+          <p><strong>No prompt can rescue fundamentally poor information architecture.</strong> If the project is substantial, establish:</p>
+          <ul>
+          <li>one canonical owner for every important fact;</li>
+          <li>separate locations for tasks, decisions and published content;</li>
+          <li>a controlled glossary;</li>
+          <li>automated checks for deterministic claims;</li>
+          <li>regular duplicate and consistency sweeps;</li>
+          <li>cold reviews of complete projects, not just diffs;</li>
+          <li>a clear reader definition for every deliverable.</li>
+          </ul>
+          <p>Treat an LLM-managed project as a small publishing system, not one endlessly extended writing task. Give working material somewhere to live, give accepted facts an authoritative home, and create a firm boundary around what reaches the reader.</p>
+          <p>The governing principle is simple:</p>
+          <p><strong>The authoring history may explain the product, but it should not become part of the product unless the eventual reader genuinely needs it.</strong></p>
+          <p>Or, as a working rule:</p>
+          <p><strong>Investigate with history. Decide in a log. Publish from current state. Verify cold.</strong></p>
+          <p>Large projects will still accumulate debris. That is normal. The objective is not immaculate generation; it is a process that exposes the residue, moves useful information to the right place and prevents yesterday’s argument from becoming tomorrow’s fact.</p>
+          <h2>Prompts for Identifying and Removing Editorial Residue</h2>
+          <p>This works best on the desktop version of your chosen LLM/Agent system, so it can operate directly on the files included in the workflow.</p>
+          <p>The strongest approach uses separate contexts for identification, correction and verification. The workflow matters more than any supposedly magic wording.</p>
+          <p>Do not give the publication pass access to the entire conversation that created the residue, only the documents you want to release.</p>
+          <h3>1. Cold-reader identification</h3>
+          <p>Use this without providing the previous authoring conversation.</p>
+          <pre class="prompt-block"><code>Act as a cold publication editor.
+
+          Intended reader:
+          [DESCRIBE THE READER]
+
+          Purpose of the artefact:
+          [DESCRIBE WHAT THE READER SHOULD KNOW, DECIDE OR DO]
+
+          Review the attached artefact for editorial residue: material whose function belongs to the authoring process rather than the reader’s use of the finished artefact.
+
+          Look specifically for:
+
+          - corrections whose original error is no longer present;
+          - negative statements rebutting an absent claim;
+          - references to previous drafts, discussions or decisions;
+          - explanations of why the author included, omitted or prioritised something;
+          - statements demonstrating compliance with an instruction;
+          - source reconciliation exposed as reader-facing material;
+          - apologies for incomplete or previously incomplete work;
+          - comments about the file, section, template or writing process;
+          - repeated facts created by parallel editing;
+          - sections whose length appears disproportionate to their reader-facing importance.
+
+          Apply two tests:
+
+          1. Would a reader who never saw the authoring process be worse off without this?
+          2. Would this material exist in a clean-sheet version produced today from the current requirements and accepted facts?
+
+          Preserve material that communicates a current constraint, genuine uncertainty, necessary provenance, accessibility requirement, safety requirement or useful rationale.
+
+          Do not edit the artefact during this pass.
+
+          Return a table containing:
+
+          - location;
+          - exact excerpt;
+          - classification;
+          - why it appears to be residue;
+          - current information worth preserving;
+          - recommended action: keep, delete, rewrite, relocate, consolidate, reconcile or rebalance;
+          - confidence: high, medium or low.
+          </code></pre>
+          <h3>2. Audience-and-purpose audit</h3>
+          <p>Use this when you want the review to concentrate on whether every part of an artefact serves its intended audience.</p>
+          <pre class="prompt-block"><code>Review this artefact as though you are encountering it for the first time.
+
+          Intended reader:
+          [DESCRIBE THE READER]
+
+          The artefact should help the reader:
+
+          [LIST THE READER’S ACTUAL TASKS, QUESTIONS OR DECISIONS]
+
+          For each section, paragraph, instruction, comment or data block, determine whether it supports one of those reader needs.
+
+          Flag material that instead:
+
+          - speaks to an author, editor or collaborator;
+          - refers to an abandoned requirement, feature or interpretation;
+          - explains why the artefact was written or organised in a particular way;
+          - preserves discussion about previous versions;
+          - demonstrates that an instruction was followed;
+          - defends a decision against an objection the reader cannot see;
+          - exposes source conflicts that have already been resolved;
+          - records incomplete work that is now complete;
+          - adds detail without improving the reader’s understanding or decisions.
+
+          Protect material that provides durable rationale, necessary context, accessibility support, safety guidance, required attribution or uncertainty that genuinely affects the reader.
+
+          Return findings only. Quote each passage, explain the cold-reader problem and recommend a specific action.
+          </code></pre>
+          <h3>3. Project-wide collection</h3>
+          <p>Use this to build a register before changing anything.</p>
+          <pre class="prompt-block"><code>Conduct a read-only production-artefact audit across:
+
+          [TARGET FILES, DIRECTORIES OR MATERIALS]
+
+          Do not modify the source material during this pass.
+
+          Identify:
+
+          A. Editorial residue
+          B. Compliance leakage
+          C. Stale dependencies
+          D. Duplicated or conflicting facts
+          E. Attention distortion
+          F. Template-filling or false precision
+          G. Unsupported terminology or invention
+
+          For every confirmed or probable finding, create a register entry containing:
+
+          - unique ID;
+          - file, page or section;
+          - exact excerpt;
+          - category;
+          - severity;
+          - reader-facing harm;
+          - current fact, if established;
+          - probable cause;
+          - recommended action;
+          - supporting evidence;
+          - confidence level.
+
+          Distinguish between:
+
+          - material that is incorrect;
+          - material that is correct but misplaced;
+          - material that is useful but duplicated;
+          - material that cannot be judged without a decision.
+
+          Do not infer missing current facts. Mark them as unresolved and identify the decision or source required.
+
+          Finish with:
+
+          1. findings by category;
+          2. findings by severity;
+          3. repeated patterns suitable for linting;
+          4. systemic problems requiring changes to project structure;
+          5. the five highest-priority repairs.
+          </code></pre>
+          <h3>4. Rectification planning</h3>
+          <p>Run this after reviewing the findings yourself. Providing the plan of action for the LLM before it acts makes sure it is surgical rather than general in its editing. </p>
+          <pre class="prompt-block"><code>Using the attached artefact and approved audit findings, produce a precise rectification plan.
+
+          Approved findings:
+          [PASTE CONFIRMED FINDINGS]
+
+          For each finding, choose one action:
+
+          - Delete: no reader-facing value remains.
+          - Rewrite: useful current information is trapped inside historical or defensive language.
+          - Relocate: the material belongs in a commit, issue, decision log, research record or author note.
+          - Consolidate: the same fact appears in multiple places.
+          - Reconcile: sources disagree and a current state must be established.
+          - Rebalance: the section’s size or detail is disproportionate to its importance.
+          - Keep: the material serves a durable reader-facing purpose.
+
+          For every rewrite, state the current fact positively without repeating the abandoned claim.
+
+          Where the current truth is not established, stop and mark the item as requiring a decision. Do not invent a resolution.
+
+          Return an edit specification rather than revised content.
+          </code></pre>
+          <p>This stage gives you a chance to catch false positives before the LLM begins deleting or rewriting material.</p>
+          <h3>5. Clean reconstruction</h3>
+          <p>Run this in a fresh context. Supply the accepted current facts, not the conversation that produced them.</p>
+          <pre class="prompt-block"><code>Produce the final reader-facing artefact using the following current-state brief.
+
+          Intended reader:
+          [DESCRIBE THE READER]
+
+          Reader’s purpose:
+          [WHAT THEY NEED TO KNOW, DECIDE, CREATE OR DO]
+
+          Current facts and requirements:
+          [ACCEPTED CURRENT STATE ONLY]
+
+          Required structure:
+          [FORMAT, HEADINGS, SCHEMA OR TEMPLATE]
+
+          Each part of the output should perform at least one reader-facing function:
+
+          - state a current fact;
+          - give a necessary action;
+          - explain a relevant concept;
+          - describe an observable result;
+          - support a decision;
+          - clarify a durable constraint;
+          - provide necessary safety, accessibility, attribution or troubleshooting information.
+
+          Render resolved decisions as direct, present-tense content.
+
+          Output the complete replacement artefact only.
+          </code></pre>
+          <p>The crucial step is constructing the current-state brief. Include what is true now. Leave out the abandoned interpretation and the discussion that killed it.</p>
+          <h3>6. Small-artefact, one-pass clean-up</h3>
+          <p>Separation is safer, but this is adequate for a short, low-risk artefact.</p>
+          <pre class="prompt-block"><code>Prepare this artefact for publication.
+
+          Audience:
+          [DESCRIBE THE READER]
+
+          Purpose:
+          [DESCRIBE THE ARTEFACT’S PURPOSE]
+
+          First, identify material whose function belongs to drafting, correction, source reconciliation or author discussion.
+
+          Then revise the artefact by:
+
+          - deleting material with no present reader value;
+          - expressing useful information as direct current-state facts;
+          - preserving durable rationale, safety, accessibility and necessary provenance;
+          - consolidating repeated information;
+          - keeping unresolved matters unresolved rather than inventing answers.
+
+          Return two clearly separated sections:
+
+          1. REVISED ARTEFACT
+             The complete publication-ready material.
+
+          2. EDITORIAL RECORD
+             A concise list of deleted, rewritten, relocated or unresolved material.
+
+          The editorial record is separate from the revised artefact.
+          </code></pre>
+          <p>Avoid this one-pass version for complex projects. The identification language remains in the same context as the rewrite, so it can contaminate the result.</p>
+          <h3>7. Structural-distortion audit</h3>
+          <p>Scar tissue does not always appear as a suspicious sentence. Sometimes the whole artefact has grown around the conversation.</p>
+          <pre class="prompt-block"><code>Audit the structure and allocation of attention in this artefact.
+
+          Use the supplied priority map:
+
+          [LIST THE RELATIVE IMPORTANCE OF SECTIONS, FEATURES, QUESTIONS OR CONCEPTS]
+
+          Assess:
+
+          - length or implementation weight by section;
+          - repetition of the same facts;
+          - number of examples devoted to each concept;
+          - detail that exceeds likely reader need;
+          - exhaustive treatment of implausible edge cases;
+          - recently added terminology that has spread unusually far;
+          - sections that appear to justify their own length or existence;
+          - important reader tasks receiving comparatively little support.
+
+          For each imbalance, explain:
+
+          - the structural symptom;
+          - the probable reader impact;
+          - whether it appears intentional;
+          - what should be cut, combined, expanded or moved.
+
+          Do not equate length with importance automatically. Judge whether the allocated detail supports the reader’s actual task.
+          </code></pre>
+          <h3>8. Final cold verification</h3>
+          <p>Run this in another fresh context, supplying only the revised artefact and its reader brief.</p>
+          <pre class="prompt-block"><code>Act as the final publication gate for this artefact.
+
+          Intended reader:
+          [DESCRIBE THE READER]
+
+          Purpose:
+          [DESCRIBE THE ARTEFACT’S PURPOSE]
+
+          Review the finished artefact for escaped editorial residue.
+
+          A blocking finding is any passage whose primary function is to:
+
+          - address an author, editor or collaborator;
+          - rebut an absent claim;
+          - describe a previous version;
+          - demonstrate that an instruction was followed;
+          - expose source reconciliation the reader does not need;
+          - explain the artefact’s production rather than its subject;
+          - preserve an abandoned feature, term or assumption;
+          - compensate for conversational history unavailable to the reader.
+
+          Also identify durable rationale or necessary caveats that might superficially resemble residue but should remain.
+
+          Return one verdict:
+
+          - READY FOR PUBLICATION; or
+          - REVISION REQUIRED.
+          For every blocking finding, provide its location, exact excerpt, diagnosis and smallest safe correction.
+          </code></pre>
+          <h3>Recommended sequence</h3>
+          <p>Use the prompts in this order:</p>
+          <ol>
+          <li>Run the cold-reader audit.</li>
+          <li>Review and approve the findings.</li>
+          <li>Produce the rectification plan.</li>
+          <li>Build a current-state brief.</li>
+          <li>Open a clean context and reconstruct the artefact.</li>
+          <li>Open another clean context and run the publication gate.</li>
+          <li>Convert recurring findings into lint rules, validation tests or project controls.</li>
+          </ol>
+          <p>The central rule remains simple:</p>
+          <p><strong>Give the auditor the finished artefact. Give the writer the current truth. Give neither of them the whole editorial saga.</strong></p>
+        </article>
+      </main>
+
+      <footer class="footer">
+        <span>© 2026 Mark Calleja. All rights reserved.</span>
+        <a href="https://www.linkedin.com/in/mark-calleja-2773ab86/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

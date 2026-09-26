@@ -17,7 +17,7 @@ Mark Calleja also works as MrC and describes his practice as that of a “rogue 
 - [Project Vault](https://markcalleja.info/project-vault.html): Case studies from shipped learning, technology and creative projects.
 - [Chatbot Experiments](https://markcalleja.info/chatbot-experiments.html): Education and productivity chatbots including DraftPunk, BrainBuddy, Frankly and OCEAN Guide.
 - [Words](https://markcalleja.info/words.html): Articles, talks and published writing.
-- [Contact](https://markcalleja.info/contact.html): Enquiries about learning design, workshops, AI productivity and AI in education.
+- [Contact](https://markcalleja.info/contact.html): A contact form for saying hello to Mark.
 
 ## Machine-readable resources
 

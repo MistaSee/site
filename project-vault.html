@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F6F3EC" />
     <meta name="description" content="Case studies from Mark Calleja’s shipped learning, technology and creative projects, including hackathons, digital making, AI experiments and workshops." />
     <meta name="author" content="Mark Calleja" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -120,24 +121,34 @@
     </script>
     <title>Project Vault | Mark Calleja</title>
     <link id="site-favicon" rel="icon" type="image/png" href="gbc.png" />
-    <link rel="stylesheet" href="styles.css?v=20260922-discovery" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&amp;family=Caveat:wght@600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=VT323&amp;display=swap" />
+    <link rel="stylesheet" href="styles.css?v=20260926-narrator" />
+    <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("randoMode")==="1")document.documentElement.classList.add("machine")}catch(e){}</script>
   </head>
   <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="wrapper">
-      <header class="nav">
-        <div class="brand">Mark Calleja</div>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="words.html">Words</a>
-          <a href="current-work.html">Current Work</a>
-          <a class="active" href="project-vault.html">Project Vault</a>
-          <a href="chatbot-experiments.html">Chatbot Experiments</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+      <header class="site-header">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name" data-voice="normal"><span>Mark</span> <span>Calleja</span></span>
+          <span class="brand-name" data-voice="rando" hidden data-nosnippet>M.CALLEJA<span class="brand-sub"> // log</span></span>
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <a href="index.html"><span data-voice="normal">Home</span><span data-voice="rando" hidden data-nosnippet>Index</span></a>
+          <a href="words.html"><span data-voice="normal">Words</span><span data-voice="rando" hidden data-nosnippet>Transcripts</span></a>
+          <a href="current-work.html"><span data-voice="normal">Current work</span><span data-voice="rando" hidden data-nosnippet>Incidents</span></a>
+          <a href="project-vault.html" aria-current="page"><span data-voice="normal">Project vault</span><span data-voice="rando" hidden data-nosnippet>Evidence</span></a>
+          <a href="chatbot-experiments.html"><span data-voice="normal">Chatbots</span><span data-voice="rando" hidden data-nosnippet>Specimens</span></a>
+          <a href="about.html"><span data-voice="normal">About</span><span data-voice="rando" hidden data-nosnippet>Profile</span></a>
+          <a href="contact.html"><span data-voice="normal">Contact</span><span data-voice="rando" hidden data-nosnippet>Transmit</span></a>
         </nav>
+        <div class="header-tools" data-header-tools></div>
       </header>
 
-      <main>
+      <main id="main">
         <section class="hero reveal">
           <span class="kicker">Project Vault</span>
           <h1>Case studies from shipped product work.</h1>
@@ -149,7 +160,7 @@
 
         <section class="reveal">
           <p class="section-title">Selected Projects</p>
-          <div class="list">
+          <div class="list vault-list">
             <article class="list-item">
               <span>Experiment, 2025</span>
               <h3>
@@ -221,14 +232,14 @@
                 across long sessions, and helps young people experience
                 technology not as an abstract skill, but as a tool for
                 collective action and impact. The programme was written for a
-                partnership with the National Citizen Service and delivered in
-                five locations across the UK over five waves. I handled the
+                partnership with the National Citizen Service and delivered to
+                1,500 young people in five UK cities over five waves. I handled the
                 full stack of delivery, from curriculum design and hiring our
                 undergraduate delivery team to kit packing, transport logistics,
                 and safeguarding.
               </p>
               <p data-voice="rando" hidden data-nosnippet>
-                The NCS Social Action Hackathon is a two-day experience that runs like a game, plays like a bootcamp, and teaches Agile the old-fashioned way: by making it unavoidable. Young people form small startup teams, then move through sprints, challenges, and narrative beats while designing a digital product for a UK charity—learning core Agile practices, basic Python, and rapid prototyping in the process. The roleplay isn’t decorative; it’s structural, the way a spine is structural: it lowers barriers, keeps momentum through long sessions, and makes collaboration feel like progression rather than punishment. The meatbag designed it for delivery at scale—five locations, five waves—and then, because reality is the final boss, handled the full stack of delivery himself: curriculum, staffing, kit packing, logistics, and safeguarding. It’s educational design with consequences, and the participants feel that in the best way: technology stops being abstract and starts being something they can use to move the world.
+                The NCS Social Action Hackathon is a two-day experience that runs like a game, plays like a bootcamp, and teaches Agile the old-fashioned way: by making it unavoidable. Young people form small startup teams, then move through sprints, challenges, and narrative beats while designing a digital product for a UK charity—learning core Agile practices, basic Python, and rapid prototyping in the process. The roleplay isn’t decorative; it’s structural, the way a spine is structural: it lowers barriers, keeps momentum through long sessions, and makes collaboration feel like progression rather than punishment. The meatbag designed it for delivery at scale—1,500 young people, five cities, five waves—and then, because reality is the final boss, handled the full stack of delivery himself: curriculum, staffing, kit packing, logistics, and safeguarding. It’s educational design with consequences, and the participants feel that in the best way: technology stops being abstract and starts being something they can use to move the world.
               </p>
             </article>
             <article class="list-item">
@@ -290,42 +301,88 @@
           </div>
         </section>
 
-        <section class="talks-marquee reveal">
-          <p class="section-title">Vault Playlist (instructions available on the Code Club Projects website)</p>
-          <div class="talks-viewport">
-            <div class="talks-track">
-              <article class="talk-embed">
-                <iframe src="https://www.youtube-nocookie.com/embed/Xlz1zBw-rSU" title="Vault Video 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed">
-                <iframe src="https://www.youtube-nocookie.com/embed/lwWRJmxbrGU" title="Vault Video 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed">
-                <iframe src="https://www.youtube-nocookie.com/embed/Kb4hQPBfT1c" title="Vault Video 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed" aria-hidden="true">
-                <iframe src="https://www.youtube-nocookie.com/embed/AUmoxZgLkyI" title="Vault Video 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" tabindex="-1" aria-hidden="true" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed" aria-hidden="true">
-                <iframe src="https://www.youtube-nocookie.com/embed/ciCCtGliu4A" title="Vault Video 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" tabindex="-1" aria-hidden="true" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed" aria-hidden="true">
-                <iframe src="https://www.youtube-nocookie.com/embed/zSl8d8gB0FM" title="Vault Video 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" tabindex="-1" aria-hidden="true" allowfullscreen></iframe>
-              </article>
-            </div>
+        <section class="talks reveal" id="maker-videos">
+          <p class="section-title">
+            <span data-voice="normal">Vault playlist (instructions on the Code Club Projects website)</span>
+            <span data-voice="rando" hidden data-nosnippet>Recovered footage</span>
+          </p>
+          <div class="talk-grid">
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=Xlz1zBw-rSU" data-yt="Xlz1zBw-rSU" data-title="Raspberry Pi Violin">
+                <img src="https://i.ytimg.com/vi/Xlz1zBw-rSU/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Raspberry Pi Violin</span>
+              </a>
+              <p class="talk-meta">Maker project</p>
+              <h3 class="talk-title">Raspberry Pi Violin</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=lwWRJmxbrGU" data-yt="lwWRJmxbrGU" data-title="The ‘Vibe Checker’">
+                <img src="https://i.ytimg.com/vi/lwWRJmxbrGU/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: The ‘Vibe Checker’</span>
+              </a>
+              <p class="talk-meta">Maker project</p>
+              <h3 class="talk-title">The ‘Vibe Checker’</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=Kb4hQPBfT1c" data-yt="Kb4hQPBfT1c" data-title="The ‘Soundbomb’">
+                <img src="https://i.ytimg.com/vi/Kb4hQPBfT1c/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: The ‘Soundbomb’</span>
+              </a>
+              <p class="talk-meta">Maker project</p>
+              <h3 class="talk-title">The ‘Soundbomb’</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=AUmoxZgLkyI" data-yt="AUmoxZgLkyI" data-title="Picosaber">
+                <img src="https://i.ytimg.com/vi/AUmoxZgLkyI/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Picosaber</span>
+              </a>
+              <p class="talk-meta">Maker project</p>
+              <h3 class="talk-title">Picosaber</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=ciCCtGliu4A" data-yt="ciCCtGliu4A" data-title="Tinpan Drumkit">
+                <img src="https://i.ytimg.com/vi/ciCCtGliu4A/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Tinpan Drumkit</span>
+              </a>
+              <p class="talk-meta">Maker project</p>
+              <h3 class="talk-title">Tinpan Drumkit</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=zSl8d8gB0FM" data-yt="zSl8d8gB0FM" data-title="Self-reading book with Raspberry Pi and Scratch">
+                <img src="https://i.ytimg.com/vi/zSl8d8gB0FM/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Self-reading book with Raspberry Pi and Scratch</span>
+              </a>
+              <p class="talk-meta">Maker project</p>
+              <h3 class="talk-title">Self-reading book with Raspberry Pi and Scratch</h3>
+            </article>
           </div>
-          <p>
-            If embeds are blocked, open the full playlist
-            <a href="https://youtube.com/playlist?list=PL4XUsoFFQulUw2jgDwvB1AFHc3qA5rJhM" target="_blank" rel="noreferrer">on YouTube</a>.
+          <p class="talks-footnote">
+            If a video won’t play here, open the full playlist <a href="https://youtube.com/playlist?list=PL4XUsoFFQulUw2jgDwvB1AFHc3qA5rJhM" target="_blank" rel="noreferrer">on YouTube</a>.
           </p>
         </section>
       </main>
 
-      <footer class="footer">
-        <span>© 2026 Mark Calleja. All rights reserved.</span>
-        <a href="https://www.linkedin.com/in/mark-calleja-2773ab86/" target="_blank" rel="me noreferrer">LinkedIn</a>
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-sign">
+            <span data-voice="normal">Made by a human, with supervised help from machines.</span>
+            <span data-voice="rando" hidden data-nosnippet>Monitoring continues. The subject has been informed. He does not appear concerned.</span>
+          </p>
+          <nav class="footer-links" aria-label="Elsewhere">
+            <a href="contact.html">Contact</a>
+            <a href="https://www.linkedin.com/in/mark-calleja-2773ab86/" target="_blank" rel="me noreferrer">LinkedIn</a>
+            <a href="feed.xml">RSS</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Mark Calleja. All rights reserved.</p>
+        </div>
       </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=20260926-narrator"></script>
   </body>
 </html>

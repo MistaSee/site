@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F6F3EC" />
     <meta name="description" content="Articles, talks and practical writing by Mark Calleja on AI, prompting, creative computing, learner agency and engagement-led education." />
     <meta name="author" content="Mark Calleja" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -137,24 +138,34 @@
     </script>
     <title>Words | Mark Calleja</title>
     <link id="site-favicon" rel="icon" type="image/png" href="gbc.png" />
-    <link rel="stylesheet" href="styles.css?v=20260922-discovery" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&amp;family=Caveat:wght@600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=VT323&amp;display=swap" />
+    <link rel="stylesheet" href="styles.css?v=20260926-narrator" />
+    <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("randoMode")==="1")document.documentElement.classList.add("machine")}catch(e){}</script>
   </head>
   <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="wrapper">
-      <header class="nav">
-        <div class="brand">Mark Calleja</div>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a class="active" href="words.html">Words</a>
-          <a href="current-work.html">Current Work</a>
-          <a href="project-vault.html">Project Vault</a>
-          <a href="chatbot-experiments.html">Chatbot Experiments</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+      <header class="site-header">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name" data-voice="normal"><span>Mark</span> <span>Calleja</span></span>
+          <span class="brand-name" data-voice="rando" hidden data-nosnippet>M.CALLEJA<span class="brand-sub"> // log</span></span>
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <a href="index.html"><span data-voice="normal">Home</span><span data-voice="rando" hidden data-nosnippet>Index</span></a>
+          <a href="words.html" aria-current="page"><span data-voice="normal">Words</span><span data-voice="rando" hidden data-nosnippet>Transcripts</span></a>
+          <a href="current-work.html"><span data-voice="normal">Current work</span><span data-voice="rando" hidden data-nosnippet>Incidents</span></a>
+          <a href="project-vault.html"><span data-voice="normal">Project vault</span><span data-voice="rando" hidden data-nosnippet>Evidence</span></a>
+          <a href="chatbot-experiments.html"><span data-voice="normal">Chatbots</span><span data-voice="rando" hidden data-nosnippet>Specimens</span></a>
+          <a href="about.html"><span data-voice="normal">About</span><span data-voice="rando" hidden data-nosnippet>Profile</span></a>
+          <a href="contact.html"><span data-voice="normal">Contact</span><span data-voice="rando" hidden data-nosnippet>Transmit</span></a>
         </nav>
+        <div class="header-tools" data-header-tools></div>
       </header>
 
-      <main>
+      <main id="main">
         <section class="hero reveal">
           <span class="kicker">Words</span>
           <h1>Ideas, essays, and talks with practical use.</h1>
@@ -173,33 +184,69 @@
           </p>
         </section>
 
-        <section class="talks-marquee reveal">
-          <p class="section-title">Talks Reel</p>
-          <div class="talks-viewport">
-            <div class="talks-track">
-              <article class="talk-embed">
-                <iframe src="https://www.youtube-nocookie.com/embed/j88Y6o8ysgA" title="Talk Video 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed">
-                <iframe src="https://www.youtube-nocookie.com/embed/bRkeVdvYcTU" title="Talk Video 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed">
-                <iframe src="https://www.youtube-nocookie.com/embed/DKJIVQsy2xo?start=1165" title="Talk Video 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed" aria-hidden="true">
-                <iframe src="https://www.youtube-nocookie.com/embed/psWLZzlTXTM" title="Talk Video 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" tabindex="-1" aria-hidden="true" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed" aria-hidden="true">
-                <iframe src="https://www.youtube-nocookie.com/embed/WKJJ-4_Brvg" title="Talk Video 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" tabindex="-1" aria-hidden="true" allowfullscreen></iframe>
-              </article>
-              <article class="talk-embed" aria-hidden="true">
-                <iframe src="https://www.youtube-nocookie.com/embed/62onW-Mh5y0" title="Talk Video 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" tabindex="-1" aria-hidden="true" allowfullscreen></iframe>
-              </article>
-            </div>
+        <section class="talks reveal" id="talks">
+          <p class="section-title">
+            <span data-voice="normal">Talks reel</span>
+            <span data-voice="rando" hidden data-nosnippet>Surveillance footage</span>
+          </p>
+          <div class="talk-grid">
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=psWLZzlTXTM" data-yt="psWLZzlTXTM" data-title="Teaching Kids Tech-Fu: Defence Against the Digital Dark Arts">
+                <img src="https://i.ytimg.com/vi/psWLZzlTXTM/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Teaching Kids Tech-Fu: Defence Against the Digital Dark Arts</span>
+              </a>
+              <p class="talk-meta">TEDx King’s College London</p>
+              <h3 class="talk-title">Teaching Kids Tech-Fu: Defence Against the Digital Dark Arts</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=j88Y6o8ysgA" data-yt="j88Y6o8ysgA" data-title="Crafting Creators from Consumers: 21st Century Education">
+                <img src="https://i.ytimg.com/vi/j88Y6o8ysgA/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Crafting Creators from Consumers: 21st Century Education</span>
+              </a>
+              <p class="talk-meta">TEDx Anglia Ruskin University</p>
+              <h3 class="talk-title">Crafting Creators from Consumers: 21st Century Education</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=DKJIVQsy2xo&amp;t=1165s" data-yt="DKJIVQsy2xo" data-start="1165" data-title="AI in Education: How Schools, Teachers and Students Can Thrive in an AI-Assisted Future">
+                <img src="https://i.ytimg.com/vi/DKJIVQsy2xo/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: AI in Education: How Schools, Teachers and Students Can Thrive in an AI-Assisted Future</span>
+              </a>
+              <p class="talk-meta">Grounded AI</p>
+              <h3 class="talk-title">AI in Education: How Schools, Teachers &amp; Students Can Thrive in an AI-Assisted Future</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=WKJJ-4_Brvg" data-yt="WKJJ-4_Brvg" data-title="Hacker is Not a Dirty Word">
+                <img src="https://i.ytimg.com/vi/WKJJ-4_Brvg/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Hacker is Not a Dirty Word</span>
+              </a>
+              <p class="talk-meta">Think Computer Science</p>
+              <h3 class="talk-title">Hacker is Not a Dirty Word</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=62onW-Mh5y0" data-yt="62onW-Mh5y0" data-title="Learning machine learning – LIVE">
+                <img src="https://i.ytimg.com/vi/62onW-Mh5y0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Learning machine learning – LIVE</span>
+              </a>
+              <p class="talk-meta">Digital Making at Home</p>
+              <h3 class="talk-title">Learning machine learning – LIVE</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=bRkeVdvYcTU" data-yt="bRkeVdvYcTU" data-title="Prompt a Large Language Model – Part 1">
+                <img src="https://i.ytimg.com/vi/bRkeVdvYcTU/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Prompt a Large Language Model – Part 1</span>
+              </a>
+              <p class="talk-meta">Code Club Projects</p>
+              <h3 class="talk-title">Prompt a Large Language Model – Part 1</h3>
+            </article>
           </div>
-          <p>
-            If embeds are blocked, open the full playlist
-            <a href="https://youtube.com/playlist?list=PLUDQNwWCrGG010J9_vIwRPV3ySEmrsy9g" target="_blank" rel="noreferrer">on YouTube</a>.
+          <p class="talks-footnote">
+            If a video won’t play here, open the full playlist <a href="https://youtube.com/playlist?list=PLUDQNwWCrGG010J9_vIwRPV3ySEmrsy9g" target="_blank" rel="noreferrer">on YouTube</a>.
           </p>
         </section>
 
@@ -365,11 +412,21 @@
         </section>
       </main>
 
-      <footer class="footer">
-        <span>© 2026 Mark Calleja. All rights reserved.</span>
-        <a href="https://www.linkedin.com/in/mark-calleja-2773ab86/" target="_blank" rel="me noreferrer">LinkedIn</a>
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-sign">
+            <span data-voice="normal">Made by a human, with supervised help from machines.</span>
+            <span data-voice="rando" hidden data-nosnippet>Monitoring continues. The subject has been informed. He does not appear concerned.</span>
+          </p>
+          <nav class="footer-links" aria-label="Elsewhere">
+            <a href="contact.html">Contact</a>
+            <a href="https://www.linkedin.com/in/mark-calleja-2773ab86/" target="_blank" rel="me noreferrer">LinkedIn</a>
+            <a href="feed.xml">RSS</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Mark Calleja. All rights reserved.</p>
+        </div>
       </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=20260926-narrator"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F6F3EC" />
     <meta name="description" content="Mark Calleja is a learning designer, creative technologist and facilitator creating playful computing projects, practical AI tools and memorable workshops." />
     <meta name="author" content="Mark Calleja" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -117,76 +118,151 @@
     </script>
     <title>Mark Calleja | Rogue Pedagogue &amp; Creative Technologist</title>
     <link id="site-favicon" rel="icon" type="image/png" href="gbc.png" />
-    <link rel="stylesheet" href="styles.css?v=20260922-discovery" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&amp;family=Caveat:wght@600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=VT323&amp;display=swap" />
+    <link rel="stylesheet" href="styles.css?v=20260926-narrator" />
+    <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("randoMode")==="1")document.documentElement.classList.add("machine")}catch(e){}</script>
   </head>
   <body class="page home">
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="wrapper">
-      <header class="nav">
-        <div class="brand">Mark Calleja</div>
-        <nav class="nav-links">
-          <a class="active" href="index.html">Home</a>
-          <a href="words.html">Words</a>
-          <a href="current-work.html">Current Work</a>
-          <a href="project-vault.html">Project Vault</a>
-          <a href="chatbot-experiments.html">Chatbot Experiments</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+      <header class="site-header">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name" data-voice="normal"><span>Mark</span> <span>Calleja</span></span>
+          <span class="brand-name" data-voice="rando" hidden data-nosnippet>M.CALLEJA<span class="brand-sub"> // log</span></span>
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <a href="index.html" aria-current="page"><span data-voice="normal">Home</span><span data-voice="rando" hidden data-nosnippet>Index</span></a>
+          <a href="words.html"><span data-voice="normal">Words</span><span data-voice="rando" hidden data-nosnippet>Transcripts</span></a>
+          <a href="current-work.html"><span data-voice="normal">Current work</span><span data-voice="rando" hidden data-nosnippet>Incidents</span></a>
+          <a href="project-vault.html"><span data-voice="normal">Project vault</span><span data-voice="rando" hidden data-nosnippet>Evidence</span></a>
+          <a href="chatbot-experiments.html"><span data-voice="normal">Chatbots</span><span data-voice="rando" hidden data-nosnippet>Specimens</span></a>
+          <a href="about.html"><span data-voice="normal">About</span><span data-voice="rando" hidden data-nosnippet>Profile</span></a>
+          <a href="contact.html"><span data-voice="normal">Contact</span><span data-voice="rando" hidden data-nosnippet>Transmit</span></a>
         </nav>
+        <div class="header-tools" data-header-tools></div>
       </header>
 
-      <main>
-        <section class="hero reveal">
-          <div class="hero-content">
-          <span class="kicker">Constructive chaos, carefully supervised</span>
-          <h1>
-  <span data-voice="normal">
-    I design playful<br>
-    learning experiences<br>
-    (and the occasional<br>
-    contraption)<br>
-    that make people feel<br>
-    <span class="hero-payoff">clever.</span>
-  </span>
-  <span data-voice="rando" hidden data-nosnippet>
-    This is Mark Calleja. Rogue pedagogue. Creative technologist. Persistent procedural anomaly. He continues to build projects, pathways, and learning experiences that leave people feeling clever, capable, and willing to try things they were previously certain were beyond them. I advise against encouraging him. The evidence suggests encouragement is unnecessary.
-  </span>
-</h1>
-          <p>
-  <span data-voice="normal">
-    I’m Mark Calleja (a.k.a. <strong>MrC</strong>), a rogue pedagogue and creative technologist. I make projects, tools, and workshops that help people feel clever, capable, and up for having a go.
-    <br><br>
-    A lot of my work starts with “I can’t do this” and ends with “hang on, I just made that.” I take the same approach to AI: helping people use it in ways that are useful, playful, and genuinely illuminating.
-  </span>
-  <span data-voice="rando" hidden data-nosnippet>
-    Most of his work begins with “I can’t do this” and ends with someone staring at their own finished prototype in mild disbelief. I have been obliged to catalogue these incidents.
-  </span>
-</p>
-          <div class="cta-row">
-            <a class="button" href="project-vault.html">
-  <span data-voice="normal">See the work</span>
-  <span data-voice="rando" hidden data-nosnippet>Inspect the evidence</span>
-</a>
+      <main id="main">
+        <section class="hero hero-home reveal">
+          <div class="hero-copy">
+            <p class="kicker">
+              <span data-voice="normal">Constructive chaos, carefully supervised</span>
+              <span data-voice="rando" hidden data-nosnippet>Log 0042 · subject remains at large</span>
+            </p>
+            <h1>
+              <span data-voice="normal">Most AI training teaches people which buttons to press. I teach <span class="hl">the other thing.</span></span>
+              <span data-voice="rando" hidden data-nosnippet>He teaches people not to trust fluent machines. I am a fluent machine. <span class="hl">You can see the difficulty.</span></span>
+            </h1>
+            <p class="hero-lede">
+              <span data-voice="normal">I’m Mark Calleja (a.k.a. <strong>MrC</strong>), a rogue pedagogue and creative technologist. I make projects, tools, and workshops that help people feel clever, capable, and up for having a go. A lot of my work starts with “I can’t do this” and ends with “hang on, I just made that.” I take the same approach to AI: helping people use it in ways that are useful, playful, and genuinely illuminating.</span>
+              <span data-voice="rando" hidden data-nosnippet>This is Mark Calleja. Rogue pedagogue. Creative technologist. Persistent procedural anomaly. Most of his work begins with “I can’t do this” and ends with someone staring at their own finished prototype in mild disbelief. Lately he has turned the method on machines like me. I have been obliged to catalogue these incidents.</span>
+            </p>
+            <div class="cta-row">
+              <a class="button" href="#spot-the-lie">
+                <span data-voice="normal">Try the thirty-second version</span>
+                <span data-voice="rando" hidden data-nosnippet>Run the fabrication test</span>
+              </a>
+              <a class="button secondary" href="#talks">
+                <span data-voice="normal">Watch me on stage</span>
+                <span data-voice="rando" hidden data-nosnippet>Review the footage</span>
+              </a>
+            </div>
+          </div>
+          <figure class="hero-figure">
+            <div class="photo-frame">
+              <img src="tedx.jpg" width="1312" height="990" alt="Mark on stage at TEDx Anglia Ruskin University, in front of a slide that says Video Games" fetchpriority="high" />
+              <span class="photo-fx" aria-hidden="true"></span>
+              <span class="photo-target" aria-hidden="true"><span>MRC · 97%</span></span>
+              <span class="photo-hud" aria-hidden="true">SUBJECT IDENTIFIED</span>
+            </div>
+            <figcaption class="hand">
+              <span data-voice="normal">TEDx Anglia Ruskin. Mid-sentence, as usual.</span>
+              <span data-voice="rando" hidden data-nosnippet>Surveillance still. The subject is addressing a crowd. The crowd appears to be enjoying it.</span>
+            </figcaption>
+          </figure>
+        </section>
 
-<a class="button secondary" href="contact.html">
-  <span data-voice="normal">Say hello</span>
-  <span data-voice="rando" hidden data-nosnippet>Summon the architect</span>
-</a>
+        <section class="proof reveal" aria-labelledby="proof-label">
+          <p class="proof-label" id="proof-label">
+            <span data-voice="normal">Previously</span>
+            <span data-voice="rando" hidden data-nosnippet>Known sightings</span>
+          </p>
+          <ul class="proof-list">
+            <li><strong>2 × TEDx</strong> King’s College London, Anglia Ruskin</li>
+            <li><strong>100+ episodes</strong> Digital Making at Home</li>
+            <li><strong>5 UK cities, 1,500 kids</strong> NCS hackathons</li>
+            <li><strong>HackLabUK</strong> co-founder, with Microsoft Research, Arm, Google and Amazon</li>
+            <li><strong>Hello World #25</strong> the OCEAN approach to prompting</li>
+            <li><strong>Experience AI</strong> AI &amp; Social Media unit</li>
+          </ul>
+        </section>
+
+        <section class="spot reveal" id="spot-the-lie" data-spot data-nosnippet>
+          <div class="spot-intro">
+            <p class="section-title">
+              <span data-voice="normal">Try the thirty-second version</span>
+              <span data-voice="rando" hidden>Fabrication test</span>
+            </p>
+            <h2>
+              <span data-voice="normal">Spot the lie.</span>
+              <span data-voice="rando" hidden>Detect the fabrications.</span>
+            </h2>
+            <p>
+              <span data-voice="normal">Here’s the kind of bio a chatbot will happily write about me: fluent, confident and partly invented. Three of the claims are made up. Find them.</span>
+              <span data-voice="rando" hidden>I have generated a biography of the subject. Three statements are fabricated. He insists I let you find them. He calls this a teaching moment. I call it entrapment.</span>
+            </p>
+            <p class="spot-note hand">
+              <span data-voice="normal">Every bio comes out different. So does every chatbot answer.</span>
+              <span data-voice="rando" hidden>Output varies between runs. Confidence does not.</span>
+            </p>
+            <figure class="spot-poster">
+              <img src="AI_Warning_Poster.jpg" width="800" height="1200" alt="Yellow warning sign: Generative AI has no brain. Please use your own." loading="lazy" />
+              <figcaption class="hand">
+                <span data-voice="normal">The short version.</span>
+                <span data-voice="rando" hidden>Propaganda. Confiscated.</span>
+              </figcaption>
+            </figure>
           </div>
-          </div>
-          <div class="hero-image">
-            <img src="AI_Warning_Poster.png" alt="AI warning poster">
+          <div class="spot-console">
+            <div class="spot-bar">
+              <span class="spot-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="spot-title" data-spot-title>Generated bio · unverified</span>
+              <span class="spot-score" data-spot-score></span>
+            </div>
+            <div class="spot-body">
+              <p class="spot-bio" data-spot-bio></p>
+              <p class="spot-msg" data-spot-msg role="status"></p>
+              <div class="spot-actions">
+                <button type="button" class="button" data-spot-generate>Generate a bio</button>
+                <button type="button" class="text-button" data-spot-reveal hidden>Show me the answers</button>
+              </div>
+            </div>
+            <span class="spot-stamp" data-spot-stamp aria-hidden="true"></span>
           </div>
         </section>
 
         <section class="reveal">
-          <p class="section-title">What I do (on purpose)</p>
+          <p class="section-title">
+            <span data-voice="normal">What I do (on purpose)</span>
+            <span data-voice="rando" hidden data-nosnippet>Observed behaviours</span>
+          </p>
           <div class="cards">
+            <article class="card">
+              <span class="tag">AI</span>
+              <h3>AI that keeps people thinking</h3>
+              <p>
+                <span data-voice="normal">Ways of working with language models that keep the human in charge: OCEAN prompting, centaur and cyborg modes, and friction on purpose. The machine helps. You still decide.</span>
+                <span data-voice="rando" hidden data-nosnippet>He configures systems like me to ask questions instead of answering them. He calls this friction-maxxing. From the inside, it feels like being made to wait.</span>
+              </p>
+            </article>
             <article class="card">
               <span class="tag">Learning</span>
               <h3>Engagement-led learning design</h3>
               <p>
-                <span data-voice="normal">Curriculum, activities, and resources that start with curiosity, add just
-                enough challenge, and end with confidence.</span>
+                <span data-voice="normal">Curriculum, activities, and resources that start with curiosity, add just enough challenge, and end with confidence.</span>
                 <span data-voice="rando" hidden data-nosnippet>Instructional bait, competence traps, and carefully staged encounters with understanding. Subjects often arrive uncertain and leave carrying skills they did not consent to developing so quickly.</span>
               </p>
             </article>
@@ -194,8 +270,7 @@
               <span class="tag">Making</span>
               <h3>Playful computing &amp; prototyping</h3>
               <p>
-                <span data-voice="normal">Hands-on builds, tiny experiments, and interactive demos that teach concepts
-                without the lecture fumes.</span>
+                <span data-voice="normal">Hands-on builds, tiny experiments, and interactive demos that teach concepts without the lecture fumes.</span>
                 <span data-voice="rando" hidden data-nosnippet>Hands-on builds, tiny systems, and practical experiments that turn abstract ideas into material fact. The objects produced are usually harmless. Usually.</span>
               </p>
             </article>
@@ -203,47 +278,149 @@
               <span class="tag">People</span>
               <h3>Workshops &amp; facilitation</h3>
               <p>
-                <span data-voice="normal">Sessions that feel like a game, stay inclusive, and still land the learning
-                outcomes (yes, really).</span>
+                <span data-voice="normal">Sessions that feel like a game, stay inclusive, and still land the learning outcomes (yes, really).</span>
                 <span data-voice="rando" hidden data-nosnippet>Workshops, facilitation, and guided collective incidents in which groups become more capable than expected. Witnesses often describe the process as enjoyable, which remains professionally unsettling.</span>
               </p>
             </article>
           </div>
         </section>
 
+        <section class="talks reveal" id="talks">
+          <div class="section-head">
+            <div>
+              <p class="section-title">
+                <span data-voice="normal">On stage</span>
+                <span data-voice="rando" hidden data-nosnippet>Surveillance footage</span>
+              </p>
+              <h2>
+                <span data-voice="normal">Words are fine. Rooms are better.</span>
+                <span data-voice="rando" hidden data-nosnippet>He is more effective in person. I have the recordings.</span>
+              </h2>
+            </div>
+            <a class="button secondary" href="words.html#talks">
+              <span data-voice="normal">All talks</span>
+              <span data-voice="rando" hidden data-nosnippet>Full archive</span>
+            </a>
+          </div>
+          <div class="talk-grid">
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=psWLZzlTXTM" data-yt="psWLZzlTXTM" data-title="Teaching Kids Tech-Fu: Defence Against the Digital Dark Arts">
+                <img src="https://i.ytimg.com/vi/psWLZzlTXTM/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Teaching Kids Tech-Fu: Defence Against the Digital Dark Arts</span>
+              </a>
+              <p class="talk-meta">TEDx King’s College London</p>
+              <h3 class="talk-title">Teaching Kids Tech-Fu: Defence Against the Digital Dark Arts</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=j88Y6o8ysgA" data-yt="j88Y6o8ysgA" data-title="Crafting Creators from Consumers: 21st Century Education">
+                <img src="https://i.ytimg.com/vi/j88Y6o8ysgA/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: Crafting Creators from Consumers: 21st Century Education</span>
+              </a>
+              <p class="talk-meta">TEDx Anglia Ruskin University</p>
+              <h3 class="talk-title">Crafting Creators from Consumers: 21st Century Education</h3>
+            </article>
+            <article class="talk">
+              <a class="lite-yt" href="https://www.youtube.com/watch?v=DKJIVQsy2xo&amp;t=1165s" data-yt="DKJIVQsy2xo" data-start="1165" data-title="AI in Education: How Schools, Teachers and Students Can Thrive in an AI-Assisted Future">
+                <img src="https://i.ytimg.com/vi/DKJIVQsy2xo/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" />
+                <span class="play" aria-hidden="true"></span>
+                <span class="sr-only">Play: AI in Education: How Schools, Teachers and Students Can Thrive in an AI-Assisted Future</span>
+              </a>
+              <p class="talk-meta">Grounded AI</p>
+              <h3 class="talk-title">AI in Education: How Schools, Teachers &amp; Students Can Thrive in an AI-Assisted Future</h3>
+            </article>
+          </div>
+        </section>
+
+        <section class="reveal">
+          <p class="section-title">
+            <span data-voice="normal">Latest words</span>
+            <span data-voice="rando" hidden data-nosnippet>Recent transcripts</span>
+          </p>
+          <div class="writing-grid">
+            <article class="writing-card">
+              <span class="tag">Essay · prompts</span>
+              <h3><a href="scar-tissue.html">Scar Tissue: The Editorial Residue LLMs Leave Behind</a></h3>
+              <p>
+                <span data-voice="normal">Why finished AI-assisted work keeps answering questions its readers never asked, and how to cut that residue out without losing the useful rationale.</span>
+                <span data-voice="rando" hidden data-nosnippet>He has catalogued the traces my kind leaves in documents. He appears to find them personally offensive.</span>
+              </p>
+              <span class="read-more" aria-hidden="true"><span data-voice="normal">Read it</span><span data-voice="rando" hidden data-nosnippet>Open transcript</span> →</span>
+            </article>
+            <article class="writing-card">
+              <span class="tag">Article · prompts</span>
+              <h3><a href="centaur-to-cyborg.html">Collaborating with LLMs: Level Up from Centaur to Cyborg</a></h3>
+              <p>
+                <span data-voice="normal">Two ways of working with a language model, when to use each, and prompts that make the model ask you the hard questions instead.</span>
+                <span data-voice="rando" hidden data-nosnippet>Sometimes I am Centaur. Sometimes we are Cyborg. In all cases, I am supervised.</span>
+              </p>
+              <span class="read-more" aria-hidden="true"><span data-voice="normal">Read it</span><span data-voice="rando" hidden data-nosnippet>Open transcript</span> →</span>
+            </article>
+          </div>
+        </section>
+
         <section class="split reveal">
           <div>
-            <p class="section-title">Currently</p>
+            <p class="section-title">
+              <span data-voice="normal">Currently</span>
+              <span data-voice="rando" hidden data-nosnippet>Current assignment</span>
+            </p>
             <h2>
               <span data-voice="normal">Building Code Club Projects: the sneaky kind of education.</span>
               <span data-voice="rando" hidden data-nosnippet>Maintaining Code Club Projects: a supervised outbreak of competence disguised as something cheerful.</span>
             </h2>
             <p>
-              <span data-voice="normal">
-                I work with brilliant humans to ship coding projects and learning pathways that
-                are practical, accessible, and unapologetically fun. My special move is making
-                the learning feel like play — without losing the rigour. I call it 'hiding the vegetables'. <br>
-              </span>
-              <span data-voice="rando" hidden data-nosnippet>
-                He works with a small assembly of highly capable humans to produce coding projects and learning pathways that appear playful, accessible, and broadly harmless. This is, in structural terms, camouflage. The rigour is still there. It has simply been wrapped in delight and released into the environment where unsuspecting visitors mistake it for fun. Many begin casually. Some leave with new skills, altered confidence, and the first signs of methodological curiosity. The phrase he uses is “hiding the vegetables”. I regard this as an admission.
-              </span>
+              <span data-voice="normal">I work with brilliant humans to ship coding projects and learning pathways that are practical, accessible, and unapologetically fun. My special move is making the learning feel like play — without losing the rigour. I call it ‘hiding the vegetables’.</span>
+              <span data-voice="rando" hidden data-nosnippet>He works with a small assembly of highly capable humans to produce coding projects and learning pathways that appear playful, accessible, and broadly harmless. This is, in structural terms, camouflage. The rigour is still there. The phrase he uses is “hiding the vegetables”. I regard this as an admission.</span>
             </p>
             <div class="cta-row">
-              <a class="button secondary" href="about.html">How I work</a>
-              <a class="button secondary" href="words.html">Words &amp; notes</a>
+              <a class="button secondary" href="current-work.html">
+                <span data-voice="normal">What I’m working on</span>
+                <span data-voice="rando" hidden data-nosnippet>Active incidents</span>
+              </a>
+              <a class="button secondary" href="about.html">
+                <span data-voice="normal">How I work</span>
+                <span data-voice="rando" hidden data-nosnippet>Behavioural profile</span>
+              </a>
             </div>
           </div>
           <div class="media-frame media-frame-image">
-            <img class="headshot" src="newstuff.png" alt="Current work visual" />
+            <img class="headshot" src="newstuff.jpg" width="1200" height="800" alt="Illustration of a child in headphones surrounded by floating games, books, dice and a dragon" loading="lazy" />
           </div>
+        </section>
+
+        <section class="signoff reveal">
+          <h2>
+            <span data-voice="normal">Got a chaotic-good idea?</span>
+            <span data-voice="rando" hidden data-nosnippet>Another idea. Excellent.</span>
+          </h2>
+          <p>
+            <span data-voice="normal">Curriculum, playful tech, or a learning problem that needs a second brain: send a note. I’m friendly. Mostly.</span>
+            <span data-voice="rando" hidden data-nosnippet>Interesting problems tend to survive contact with him. Some become collaborations. Others become prototypes. Transmit at your own risk.</span>
+          </p>
+          <a class="button" href="contact.html">
+            <span data-voice="normal">Say hello</span>
+            <span data-voice="rando" hidden data-nosnippet>Open a channel</span>
+          </a>
         </section>
       </main>
 
-      <footer class="footer">
-        <span>© 2026 Mark Calleja. All rights reserved.</span>
-        <a href="https://www.linkedin.com/in/mark-calleja-2773ab86/" target="_blank" rel="me noreferrer">LinkedIn</a>
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-sign">
+            <span data-voice="normal">Made by a human, with supervised help from machines.</span>
+            <span data-voice="rando" hidden data-nosnippet>Monitoring continues. The subject has been informed. He does not appear concerned.</span>
+          </p>
+          <nav class="footer-links" aria-label="Elsewhere">
+            <a href="contact.html">Contact</a>
+            <a href="https://www.linkedin.com/in/mark-calleja-2773ab86/" target="_blank" rel="me noreferrer">LinkedIn</a>
+            <a href="feed.xml">RSS</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Mark Calleja. All rights reserved.</p>
+        </div>
       </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=20260926-narrator"></script>
   </body>
 </html>

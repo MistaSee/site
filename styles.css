@@ -242,7 +242,7 @@ html.machine .brand-mark{ filter:invert(1) drop-shadow(0 0 6px rgba(255, 63, 209
 .site-nav{
   display:flex;
   align-items:center;
-  gap:clamp(12px, 1.5vw, 24px);
+  gap:clamp(12px, 1.2vw, 24px);
   margin-left:auto;
 }
 .site-nav a{
@@ -1070,7 +1070,8 @@ html.machine .tag{
   border-left:0;
   border-right:0;
 }
-#ai-social-media{ scroll-margin-top:calc(var(--header-h) + 32px); }
+#ai-social-media,
+#brainrot-brigade{ scroll-margin-top:calc(var(--header-h) + 32px); }
 
 /* ---------- Split sections and framed media ---------- */
 
@@ -1405,6 +1406,19 @@ html.machine .chatbot-list .list-item::before{
   line-height:1.4;
 }
 html.machine .chatbot-list .list-item:hover{ transform:translateY(-3px); border-color:var(--accent-2); }
+
+/* ---------- Play page ---------- */
+
+.media-frame figcaption{ max-width:52ch; }
+.media-frame .headshot.play-poster{ max-width:360px; }
+.media-frame .headshot.play-map{ max-width:820px; }
+.list-item .cards{ margin-top:8px; }
+.list-item .card-image{ max-width:none; height:240px; object-position:top; }
+.list-item .card-image.play-crop-centre{ object-position:center 62%; }
+.card figcaption p{ font-size:0.9rem; }
+html.machine .card figcaption p{ font-size:1.2rem; }
+.play-credits{ max-width:78ch; margin-top:22px; color:var(--muted); font-size:0.85rem; }
+html.machine .play-credits{ font-size:1.15rem; }
 
 /* ---------- Articles ---------- */
 

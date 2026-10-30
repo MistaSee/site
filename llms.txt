@@ -9,6 +9,10 @@ Mark Calleja also works as MrC and describes his practice as that of a “rogue 
 - [Scar Tissue: The Editorial Residue LLMs Leave Behind](https://markcalleja.info/scar-tissue.html): An essay about obsolete corrections, orphaned disclaimers and other residue left in long AI-assisted authoring projects. Includes practical audit and reconstruction prompts. [Markdown version](https://markcalleja.info/scar-tissue.md).
 - [Collaborating with LLMs: Level Up from Centaur to Cyborg](https://markcalleja.info/centaur-to-cyborg.html): A practical distinction between centaur and cyborg ways of working with large language models, with Critical Thinking Mode and Interview Mode prompts. [Markdown version](https://markcalleja.info/centaur-to-cyborg.md).
 
+## Learning resources
+
+- [Build a game by directing AI](https://markcalleja.info/build-a-game-by-directing-ai.html): A five-step build sequence for ages 13 to 17. Teenagers make a browser game by directing an AI while keeping the thinking for themselves, using the OCEAN method, with a practice draft game to test. [Markdown version](https://markcalleja.info/build-a-game-by-directing-ai.md).
+
 ## Profile and work
 
 - [Home](https://markcalleja.info/): Overview of Mark’s approach to playful learning, computing, AI and workshops.

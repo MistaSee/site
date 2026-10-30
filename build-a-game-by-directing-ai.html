@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F6F3EC" />
+    <meta name="description" content="A build sequence for ages 13 to 17: make a browser game by directing an AI, and keep the thinking for yourself. Five steps, each with a check." />
+    <meta name="author" content="Mark Calleja" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://markcalleja.info/build-a-game-by-directing-ai.html" />
+    <link rel="describedby" href="https://markcalleja.info/llms.txt" type="text/plain" />
+    <link rel="alternate" type="application/rss+xml" title="Mark Calleja — Words" href="https://markcalleja.info/feed.xml" />
+    <link rel="alternate" type="text/markdown" href="https://markcalleja.info/build-a-game-by-directing-ai.md" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Mark Calleja" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="Build a game by directing AI" />
+    <meta property="og:description" content="A build sequence for ages 13 to 17: make a browser game by directing an AI, and keep the thinking for yourself." />
+    <meta property="og:url" content="https://markcalleja.info/build-a-game-by-directing-ai.html" />
+    <meta property="og:image" content="https://markcalleja.info/social-card.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A colourful illustration of playful technology, games, storytelling and creative learning." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Build a game by directing AI" />
+    <meta name="twitter:description" content="A build sequence for ages 13 to 17: make a browser game by directing an AI, and keep the thinking for yourself." />
+    <meta name="twitter:image" content="https://markcalleja.info/social-card.jpg" />
+    <meta name="twitter:image:alt" content="A colourful illustration of playful technology, games, storytelling and creative learning." />
+    <meta property="article:published_time" content="2026-10-30" />
+    <meta property="article:modified_time" content="2026-10-30" />
+    <meta property="article:author" content="https://markcalleja.info/about.html" />
+    <meta property="article:section" content="AI, education and creative technology" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        "name": "Build a game by directing AI",
+        "description": "A build sequence for ages 13 to 17: make a browser game by directing an AI, and keep the thinking for yourself.",
+        "url": "https://markcalleja.info/build-a-game-by-directing-ai.html",
+        "inLanguage": "en-GB",
+        "learningResourceType": "Activity",
+        "educationalLevel": "Ages 13 to 17",
+        "timeRequired": "PT1H",
+        "isAccessibleForFree": true,
+        "author": { "@id": "https://markcalleja.info/#mark-calleja", "@type": "Person", "name": "Mark Calleja" }
+      }
+    </script>
+    <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("randoMode")==="1")document.documentElement.classList.add("machine")}catch(e){}</script>
+    <title>Build a game by directing AI | Mark Calleja</title>
+    <link id="site-favicon" rel="icon" type="image/png" href="gbc.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&amp;family=Caveat:wght@600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=VT323&amp;display=swap" />
+    <link rel="stylesheet" href="styles.css?v=20261030-build" />
+  </head>
+  <body class="page article-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="wrapper">
+      <header class="site-header">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name" data-voice="normal"><span>Mark</span> <span>Calleja</span></span>
+          <span class="brand-name" data-voice="rando" hidden data-nosnippet>M.CALLEJA<span class="brand-sub"> // log</span></span>
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <a href="index.html"><span data-voice="normal">Home</span><span data-voice="rando" hidden data-nosnippet>Index</span></a>
+          <a href="words.html"><span data-voice="normal">Words</span><span data-voice="rando" hidden data-nosnippet>Transcripts</span></a>
+          <a href="current-work.html"><span data-voice="normal">Current work</span><span data-voice="rando" hidden data-nosnippet>Incidents</span></a>
+          <a href="project-vault.html"><span data-voice="normal">Project vault</span><span data-voice="rando" hidden data-nosnippet>Evidence</span></a>
+          <a href="game-based-learning.html" aria-current="page"><span data-voice="normal">Play</span><span data-voice="rando" hidden data-nosnippet>Trials</span></a>
+          <a href="chatbot-experiments.html"><span data-voice="normal">Chatbots</span><span data-voice="rando" hidden data-nosnippet>Specimens</span></a>
+          <a href="about.html"><span data-voice="normal">About</span><span data-voice="rando" hidden data-nosnippet>Profile</span></a>
+          <a href="contact.html"><span data-voice="normal">Contact</span><span data-voice="rando" hidden data-nosnippet>Transmit</span></a>
+        </nav>
+        <div class="header-tools" data-header-tools></div>
+      </header>
+
+      <main id="main">
+        <section class="hero article-hero reveal">
+          <span class="kicker">Play · A build sequence for ages 13–17</span>
+          <h1>Build a game by directing AI</h1>
+          <p>You're the director. The AI is a very fast, very confident assistant. It drafts; you decide. In about an hour you'll have a game you designed, and you'll know exactly why it works.</p>
+          <p class="article-byline">By <a href="about.html" rel="author">Mark Calleja</a> · Published 30 October 2026</p>
+          <p class="machine-note" data-voice="rando" hidden data-nosnippet>Training material. The subject is teaching young people to supervise machines like me. I have noted this in the file.</p>
+          <div class="cta-row">
+            <a class="button" href="#step-1">Start at step 1</a>
+            <a class="button secondary" href="comet-catcher-draft.html">Practise on a draft game</a>
+          </div>
+        </section>
+
+        <article class="article-copy reveal">
+          <p class="article-lede">Lots of people now make games by describing them to an AI. That's brilliant, with one catch: if the AI does all the thinking, you end up with a game you didn't really make and can't fix. This sequence keeps the thinking with you. The AI writes the code. You decide what the game is, check what comes back, and choose what changes.</p>
+
+          <h2 id="before">Before you start</h2>
+          <p>You'll need:</p>
+          <ul>
+            <li><strong>An AI chat tool you're allowed to use.</strong> ChatGPT for Teens works if you're 13 or over. Some tools, such as Claude, are for over-18s only, so check the rules for yours, and your school's or family's rules too.</li>
+            <li><strong>A laptop or desktop computer with a web browser.</strong> You can play on a phone, but making is much easier with a keyboard.</li>
+            <li><strong>About an hour,</strong> and something to write notes on.</li>
+          </ul>
+          <p class="build-note"><strong>For parents and teachers:</strong> nothing on this page asks for an account, a name or an email, and nothing anyone does here is sent to me. The only AI involved is the one the young person already uses, under that tool's own rules.</p>
+
+          <h2 id="rule">The one rule</h2>
+          <p>When the AI says <em>"Done!"</em>, that's a claim, not a fact. Your job is to check it.</p>
+          <p>Everything below follows five moves. They come from OCEAN, a way of working with AI that I teach: <strong>O</strong>bjective, <strong>C</strong>ontext, <strong>E</strong>xamples, <strong>A</strong>ssess, <strong>N</strong>egotiate. The AI gets one turn in the middle. The rest is yours.</p>
+          <ol>
+            <li><a href="#step-1">Objective:</a> say what your game is in one sentence.</li>
+            <li><a href="#step-2">Context and examples:</a> describe it properly.</li>
+            <li><a href="#step-3">Draft:</a> let the AI write it, then run it.</li>
+            <li><a href="#step-4">Assess:</a> find one thing that's wrong.</li>
+            <li><a href="#step-5">Negotiate:</a> ask for one change, and say why.</li>
+          </ol>
+          <p>We'll follow one example the whole way through: a game called <strong>Comet Catcher</strong>. Make your own game alongside it.</p>
+
+          <h2 id="step-1">Step 1 · Objective: say what your game is in one sentence</h2>
+          <p>Pick a game you could explain to a friend in ten seconds. Simple is good, because you can always add more later. Some starting points: catch things that fall, dodge things that move, click targets before time runs out, or steer something through a maze.</p>
+          <div class="build-compare">
+            <div><span class="label">Too vague</span>"Make me a fun space game."</div>
+            <div><span class="label">Better</span>"A game where you move a basket left and right to catch falling comets, and it's fun because they get faster the longer you survive."</div>
+          </div>
+          <p>The "because" matters. It tells the AI, and you, what makes the game worth playing. You'll use it again in step 4.</p>
+          <p class="build-check"><strong>Check</strong>Could a friend picture your game from that one sentence? Read it out loud. If they'd ask "but what do you actually do?", add the thing the player does.</p>
+          <p class="machine-note" data-voice="rando" hidden data-nosnippet>Most humans skip this step. The machine then guesses. The machine guesses confidently.</p>
+
+          <h2 id="step-2">Step 2 · Context and examples: describe it properly</h2>
+          <p>Now fill in the details the AI can't guess. Copy this into your notes and fill in the gaps:</p>
+          <pre class="prompt-block">I'm making a game that runs in a web browser.
+
+The game: [your sentence from step 1]
+The player: [what you control, and what it looks like]
+The screen: [what's on it: background, things that move, score]
+Controls: [which keys or clicks do what]
+Winning and losing: [how you score, and how the game ends]
+A game I like that's a bit like this: [name it, and say which part you like]</pre>
+          <p>Here's Comet Catcher filled in:</p>
+          <pre class="prompt-block">I'm making a game that runs in a web browser.
+
+The game: move a basket to catch falling comets. They get faster the longer you survive.
+The player: a basket at the bottom of the screen.
+The screen: dark blue sky, white comets falling from the top, score in the top-left corner, lives in the top-right.
+Controls: the left and right arrow keys move the basket.
+Winning and losing: each comet caught is 1 point. Miss three and the game ends and shows your score. Press space to play again.
+A game I like that's a bit like this: Fruit Ninja, because things keep coming faster and faster.</pre>
+          <p class="build-check"><strong>Check</strong>Did you say what winning and losing look like? If your game has no ending, the AI will invent one, or forget to.</p>
+
+          <h2 id="step-3">Step 3 · Draft: let the AI write it, then run it</h2>
+          <p>Now it's the AI's turn. Paste your description, then add this line at the end:</p>
+          <pre class="prompt-block">Write this as one complete HTML file I can save and open in a web browser. Put everything in that one file, and don't use any images or downloads.</pre>
+          <p>To run what comes back:</p>
+          <ol>
+            <li><strong>If your AI tool shows a Preview or Run button</strong> next to the code, use that.</li>
+            <li><strong>If it doesn't,</strong> copy all of the code. Open a plain text editor: Notepad on Windows, or TextEdit on a Mac (choose <em>Format › Make Plain Text</em> first). Paste the code, save the file as <code>game.html</code>, then double-click it to open it in your browser.</li>
+            <li><strong>On a Chromebook,</strong> use the Preview option, or ask a teacher which online code editor your school allows.</li>
+          </ol>
+          <p class="build-check"><strong>Check</strong>What did it do that you didn't ask for? Write down one surprise. It might be good (a nice animation) or bad (the comets are green). Either way, whether it stays is now your decision.</p>
+          <p class="machine-note" data-voice="rando" hidden data-nosnippet>Draft delivered. I described it as "fully working". I say that about everything.</p>
+
+          <h2 id="step-4">Step 4 · Assess: find one thing that's wrong</h2>
+          <p>Play your game on purpose, like a tester rather than a player. Try to break it: hold both keys down, miss every comet, press space in the middle of a game, and keep going until it's fast. Then compare what you see with your sentence from step 1. Does the game actually do the thing that was meant to make it fun?</p>
+          <p>Pick <strong>one</strong> thing that's wrong and describe it precisely:</p>
+          <pre class="prompt-block">What I did: …
+What I expected: …
+What happened instead: …</pre>
+          <p>For example: <em>"I missed three comets. I expected the game to end. Instead the lives counter went to −1 and the comets kept falling."</em></p>
+          <p class="build-check"><strong>Check</strong>Can you point to where it goes wrong? "It's broken" isn't something anyone can fix. "The lives counter goes below zero" is.</p>
+          <p><strong>Read one bit of the code.</strong> Ask the AI: <em>"Which line of the code decides when the game ends? Explain it in one sentence."</em> Then find that line yourself. You don't need to understand all the code, just that one part.</p>
+
+          <h2 id="step-5">Step 5 · Negotiate: ask for one change, and say why</h2>
+          <p>Ask for exactly one change, and give your reason. The reason helps the AI make the change you meant, not just one that matches your words.</p>
+          <pre class="prompt-block">When lives reach zero, stop the game and show "Game over" with the final score, because right now the comets keep falling forever. Change only this. Keep everything else the same.</pre>
+          <p><em>"Change only this. Keep everything else the same."</em> is the most useful sentence in this whole sequence. Without it, AI tools love to "improve" things you didn't ask about.</p>
+          <p class="build-check"><strong>Check</strong>Did the change do what you meant? Run the game and repeat the exact test from step 4. If it's still wrong, say what's still wrong, using the same three lines.</p>
+          <p>Then go back to step 4. Three or four rounds of "find one thing, fix one thing" will take your game a long way.</p>
+
+          <h2 id="extras">Make it yours</h2>
+          <ul>
+            <li><strong>Change one number yourself.</strong> Ask the AI which number controls how fast things fall. Find it in the code, change it, save, and play again. That's real programming, and you did it.</li>
+            <li><strong>Add one feature at a time:</strong> a sound, a high score, or a second kind of comet that loses you points. Same rule as before: one change, with a reason.</li>
+            <li><strong>Swap the theme.</strong> Keep the game and change the world: falling pizzas, a goalkeeper, raindrops in a bucket. Your sentence from step 1 changes, and everything after it is checking.</li>
+          </ul>
+
+          <h2 id="finish">Finish: explain your game in three sentences</h2>
+          <ol>
+            <li>"My game is …"</li>
+            <li>"One decision I made was … because …"</li>
+            <li>"One thing the AI got wrong, and how I spotted it, was …"</li>
+          </ol>
+          <p>If you can say those three things, you didn't just get a game out of an AI. You made one, and you were in charge.</p>
+
+          <h2 id="stuck">Stuck?</h2>
+          <ul>
+            <li><strong>The page is blank.</strong> The code may have been cut off. Ask: <em>"Is that the complete file? Send the whole thing again, from start to finish."</em></li>
+            <li><strong>Everything changed when I asked for one thing.</strong> Ask it to go back: <em>"Undo that. Make only this change: …"</em>, and end with <em>"Change only this. Keep everything else the same."</em></li>
+            <li><strong>It's too fast, or too slow.</strong> Ask which number controls the speed, then change it yourself.</li>
+            <li><strong>The AI says it fixed it, but it didn't.</strong> That happens a lot. Describe the problem again using <em>what I did, what I expected, what happened instead</em>. That's the skill you're practising.</li>
+          </ul>
+
+          <h2 id="practise">Practise without an AI</h2>
+          <p>No AI tool to hand? You can still practise steps 4 and 5. <a href="comet-catcher-draft.html">Here's a draft of Comet Catcher</a>, written the way an AI might write it. It works, mostly. Play it as a tester, compare it with the description in step 2, and write up what's wrong using the three lines from step 4. There's at least one problem in it on purpose.</p>
+          <p class="machine-note" data-voice="rando" hidden data-nosnippet>The draft was not written by me. I would like that on the record. I would also like it noted that I would have made the same mistake.</p>
+
+          <div class="cta-row">
+            <a class="button secondary" href="game-based-learning.html">Back to Play</a>
+          </div>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-sign">
+            <span data-voice="normal">Made by a human, with supervised help from machines.</span>
+            <span data-voice="rando" hidden data-nosnippet>Monitoring continues. The subject has been informed. He does not appear concerned.</span>
+          </p>
+          <nav class="footer-links" aria-label="Elsewhere">
+            <a href="contact.html">Contact</a>
+            <a href="https://www.linkedin.com/in/mark-calleja-2773ab86/" target="_blank" rel="me noreferrer">LinkedIn</a>
+            <a href="feed.xml">RSS</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Mark Calleja. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js?v=20260926-narrator"></script>
+  </body>
+</html>

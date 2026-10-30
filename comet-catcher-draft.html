@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Comet Catcher (practice draft) | Mark Calleja</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 16px; box-sizing: border-box; background: #0b1530; color: #f6f3ec; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    h1 { font-size: 1.2rem; margin: 4px 0 0; }
+    p { margin: 0; max-width: 480px; text-align: center; line-height: 1.5; font-size: 0.95rem; }
+    a { color: #f6c453; }
+    canvas { width: 100%; max-width: 480px; aspect-ratio: 3 / 4; border-radius: 12px; border: 2px solid #2a3d6b; touch-action: none; }
+  </style>
+</head>
+<body>
+  <h1>Comet Catcher (practice draft)</h1>
+  <p>Arrow keys move the basket. Test it against the description in step 2, then <a href="build-a-game-by-directing-ai.html#step-4">write up what's wrong</a>.</p>
+  <canvas id="game" width="480" height="640"></canvas>
+
+  <script>
+    // Comet Catcher: catch the falling comets with your basket!
+    const canvas = document.getElementById("game");
+    const ctx = canvas.getContext("2d");
+
+    const basket = { x: 200, y: 590, width: 80, height: 24, speed: 7 };
+    const keys = { left: false, right: false };
+
+    let comets = [];
+    let score = 0;
+    let lives = 3;
+    let gameOver = false;
+    let frame = 0;
+
+    // Comets get faster the longer you survive
+    let fallSpeed = 2.5;
+    const speedUp = 0.002;
+    const spawnEvery = 45;
+
+    function resetGame() {
+      comets = [];
+      score = 0;
+      lives = 3;
+      gameOver = false;
+      frame = 0;
+      fallSpeed = 2.5;
+      basket.x = 200;
+    }
+
+    function spawnComet() {
+      comets.push({ x: 20 + Math.random() * (canvas.width - 40), y: -20, radius: 9 });
+    }
+
+    function update() {
+      if (gameOver) return;
+      frame++;
+
+      if (keys.left) basket.x -= basket.speed;
+      if (keys.right) basket.x += basket.speed;
+      basket.x = Math.max(0, Math.min(canvas.width - basket.width, basket.x));
+
+      if (frame % spawnEvery === 0) spawnComet();
+
+      for (const comet of comets) {
+        comet.y += fallSpeed;
+      }
+
+      for (let i = comets.length - 1; i >= 0; i--) {
+        const c = comets[i];
+        const caught =
+          c.y + c.radius >= basket.y &&
+          c.y - c.radius <= basket.y + basket.height &&
+          c.x >= basket.x &&
+          c.x <= basket.x + basket.width;
+
+        if (caught) {
+          score++;
+          comets.splice(i, 1);
+        } else if (c.y - c.radius > canvas.height) {
+          lives--;
+          comets.splice(i, 1);
+          if (lives <= 0) gameOver = true;
+        }
+      }
+    }
+
+    function drawComet(c) {
+      const tail = ctx.createLinearGradient(c.x, c.y - 40, c.x, c.y);
+      tail.addColorStop(0, "rgba(255,255,255,0)");
+      tail.addColorStop(1, "rgba(255,255,255,0.6)");
+      ctx.fillStyle = tail;
+      ctx.beginPath();
+      ctx.moveTo(c.x - c.radius * 0.6, c.y);
+      ctx.lineTo(c.x, c.y - 40);
+      ctx.lineTo(c.x + c.radius * 0.6, c.y);
+      ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      ctx.beginPath();
+      ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function draw() {
+      ctx.fillStyle = "#0f1f4a";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      comets.forEach(drawComet);
+
+      ctx.fillStyle = "#f6c453";
+      ctx.fillRect(basket.x, basket.y, basket.width, basket.height);
+      ctx.fillStyle = "#c98f1b";
+      ctx.fillRect(basket.x, basket.y + basket.height - 6, basket.width, 6);
+
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "20px system-ui, sans-serif";
+      ctx.textAlign = "left";
+      ctx.fillText("Score: " + score, 14, 30);
+      ctx.textAlign = "right";
+      ctx.fillText("Lives: " + lives, canvas.width - 14, 30);
+
+      if (gameOver) {
+        ctx.fillStyle = "rgba(0,0,0,0.6)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#ffffff";
+        ctx.textAlign = "center";
+        ctx.font = "bold 40px system-ui, sans-serif";
+        ctx.fillText("Game over", canvas.width / 2, 280);
+        ctx.font = "22px system-ui, sans-serif";
+        ctx.fillText("Score: " + score, canvas.width / 2, 320);
+        ctx.fillText("Press space (or tap) to play again", canvas.width / 2, 360);
+      }
+    }
+
+    function loop() {
+      update();
+      draw();
+      requestAnimationFrame(loop);
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { keys.left = true; e.preventDefault(); }
+      if (e.key === "ArrowRight") { keys.right = true; e.preventDefault(); }
+      if (e.code === "Space") { e.preventDefault(); if (gameOver) resetGame(); }
+    });
+    document.addEventListener("keyup", (e) => {
+      if (e.key === "ArrowLeft") keys.left = false;
+      if (e.key === "ArrowRight") keys.right = false;
+    });
+
+    // Bonus: move the basket with the mouse or a finger too
+    function moveTo(clientX) {
+      const rect = canvas.getBoundingClientRect();
+      const x = (clientX - rect.left) * (canvas.width / rect.width);
+      basket.x = Math.max(0, Math.min(canvas.width - basket.width, x - basket.width / 2));
+    }
+    canvas.addEventListener("pointermove", (e) => moveTo(e.clientX));
+    canvas.addEventListener("pointerdown", (e) => { if (gameOver) resetGame(); else moveTo(e.clientX); });
+
+    loop();
+  </script>
+</body>
+</html>

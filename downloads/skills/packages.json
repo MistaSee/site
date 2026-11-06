@@ -22,5 +22,13 @@
     "bytes": 376631,
     "pdf_count": 1,
     "sha256": "84fd05a87807f48697459cfa31507b8eee518678b0e3ef45db985770402705fb"
+  },
+  {
+    "name": "frankly",
+    "route": "frankly",
+    "title": "Frankly",
+    "bytes": 7518,
+    "reference_count": 1,
+    "sha256": "cda49956d778c33675961a597fcbe143bbade23a79e3f24d08ea0f1931f67436"
   }
 ]

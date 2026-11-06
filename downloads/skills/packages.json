@@ -3,122 +3,122 @@
     "name": "brainbuddy",
     "route": "brainbuddy",
     "title": "BrainBuddy",
-    "bytes": 1843036,
+    "bytes": 1851255,
     "pdf_count": 2,
-    "sha256": "da0cc9ac5e7b2d7d79752b0b8384560144483e30b11b45f3be50a86c5693de1e"
+    "sha256": "53b9976873879ae1299dd9c1160537229539dfbbe7cff85d4cf077e3ce0dbbca"
   },
   {
     "name": "draftpunk",
     "route": "draftpunk",
     "title": "DraftPunk",
-    "bytes": 2965564,
+    "bytes": 2971590,
     "pdf_count": 5,
-    "sha256": "512e0000f3e1caab62679f1135ac220ee664428f8e990897278922aaf08284df"
+    "sha256": "3b677002bd90fc78321b5e0b17a1dda885eec4413be7fbc981f292cfe59dc5b4"
   },
   {
     "name": "ocean-guide",
     "route": "oceanguide",
     "title": "OCEAN Guide",
-    "bytes": 376631,
+    "bytes": 377479,
     "pdf_count": 1,
-    "sha256": "84fd05a87807f48697459cfa31507b8eee518678b0e3ef45db985770402705fb"
+    "sha256": "6c7be8708e72806046d5a8593d01349914258cf793d7d8af219b9a4fa8b3e867"
   },
   {
     "name": "frankly",
     "route": "frankly",
     "title": "Frankly",
-    "bytes": 7518,
+    "bytes": 7507,
     "reference_count": 1,
-    "sha256": "cda49956d778c33675961a597fcbe143bbade23a79e3f24d08ea0f1931f67436"
+    "sha256": "9f255ef4849f430bb8057db10b733d2d58c8f6d64bd32ed1e27f378a69bc0808"
   },
   {
     "name": "ai-ta",
     "route": "ai-ta",
     "title": "AI-TA 2.0",
-    "bytes": 7447024,
+    "bytes": 7447014,
     "reference_count": 20,
-    "sha256": "fb1a848c62e9782c3413aadcefe623900a97fc6a652f268144a8e1c5701d21bb",
+    "sha256": "b3246ff8e0e15fe910d5e533dc6608f64948a3489c0c8c95fea40e74370907ea",
     "source_status": "recovered"
   },
   {
     "name": "adventuremaster",
     "route": "adventuremaster",
     "title": "AdventureMaster",
-    "bytes": 10019,
+    "bytes": 10009,
     "reference_count": 0,
-    "sha256": "017eb4d24fed78a06697186cae2fe8bc3364b7b0f50bd515db628cc2fcbdf9a4",
+    "sha256": "9f950d0d505b2534a5a6acbd5d669cc91dfa88109352013ceeefef92f0d200af",
     "source_status": "recovered"
   },
   {
     "name": "platos-ghost",
     "route": "platos-ghost",
     "title": "Plato’s Ghost",
-    "bytes": 10333,
+    "bytes": 10324,
     "reference_count": 0,
-    "sha256": "0d005cd9489b4c9d2bc42000e098b1c5abb3ff7df8df60014c987af1607886bd",
+    "sha256": "a8f69b468d9d013f99af5198ed51d1e142ca6d62e19b55d6de28ce0ee6dad1df",
     "source_status": "recovered"
   },
   {
     "name": "purple-craiyon",
     "route": "purple-craiyon",
     "title": "The Purple CrAIyon",
-    "bytes": 5805,
+    "bytes": 5802,
     "reference_count": 0,
-    "sha256": "37026a2da5941bf8087ca053f9d20c965c3822acde667b062892536b8d7a77e3",
+    "sha256": "20d96484aba4531f495942fdb8fe562f0da7380522cf884254fa7c5d14a6a98f",
     "source_status": "recovered"
   },
   {
     "name": "bogan-philosopher",
     "route": "bogan-philosopher",
     "title": "The Bogan Philosopher",
-    "bytes": 9170,
+    "bytes": 9163,
     "reference_count": 0,
-    "sha256": "376b1b40632a9b04169c9f75e72cabe04091fa0bdcb4f532535247b5b3e96fd3",
+    "sha256": "16cb0a06e4ad8bf0321764ab8d2f6fa267b2e4a541a7296f906a2a62d6e00fdf",
     "source_status": "recovered"
   },
   {
     "name": "alt-text-bot",
     "route": "alt-text-bot",
     "title": "Alt-text Bot",
-    "bytes": 1216501,
+    "bytes": 1216491,
     "reference_count": 1,
-    "sha256": "248e0d54cbdd99482b7623e046f581ef247acd9e9f70c8cff09387e3b0ed81a4",
+    "sha256": "12e28a44bfbfbc89cf239499bd87a31d90fc09464c7fa16b77b0e3ee9037831a",
     "source_status": "recovered"
   },
   {
     "name": "playgpt",
     "route": "playgpt",
     "title": "PlayGPT",
-    "bytes": 1070190,
+    "bytes": 1070181,
     "reference_count": 6,
-    "sha256": "dd157ec817f35120fc63c198bc198d75d8b29dcfb3ce24eaf467ec033ca34396",
+    "sha256": "bff69f2864329a3ea62fc15972ead2f609b73cfe8dcfb8fe1125eacb6c79d8cd",
     "source_status": "recovered"
   },
   {
     "name": "runebound-mystic",
     "route": "runebound-mystic",
     "title": "The Runebound Mystic",
-    "bytes": 13686,
+    "bytes": 13677,
     "reference_count": 1,
-    "sha256": "28f6c9680d0b951cb4d1f3de433f4c0f062aac7d8cdb2e3eda94296cf08fb46b",
+    "sha256": "7400de7bd7716cc83c4104301db5d408a582795d1a13216a109341ac1a4db226",
     "source_status": "recovered"
   },
   {
     "name": "copybot",
     "route": "copybot",
     "title": "Copybot",
-    "bytes": 5148,
+    "bytes": 5137,
     "reference_count": 0,
-    "sha256": "dda52cd2a7bbfc0d6ff55d1232a1630e2170c00a37856313328788d5cc5dfeeb",
+    "sha256": "3562dd4a87c3d7cd75d168c5bc0307662e4be03762e5fe746da4f06142c23190",
     "source_status": "recovered"
   },
   {
     "name": "lexi",
     "route": "lexi",
     "title": "Lexi the Writing Companion",
-    "bytes": 9958,
+    "bytes": 9947,
     "reference_count": 1,
-    "sha256": "d6e1b5e3c0edcf323f0f80b53638a5e0a7f1cbfc8f594b70b9dc4c6265c2b186",
+    "sha256": "d50f900f8f09180e8196a79763f25a211d73e80c2c8c145ed9e230df667e0486",
     "source_status": "constitution edition 2.0; original GPT source archived"
   }
 ]

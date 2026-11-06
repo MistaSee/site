@@ -116,9 +116,9 @@
     "name": "lexi",
     "route": "lexi",
     "title": "Lexi the Writing Companion",
-    "bytes": 4721,
-    "reference_count": 0,
-    "sha256": "7b968082963c6b53fdf3e04cab450190fdb0ea4e3e9f4efbac9ecabaa0d06f3d",
-    "source_status": "prompt-only; reference missing"
+    "bytes": 70953,
+    "reference_count": 1,
+    "sha256": "49829b05d4a892d81dd5505e39020d906ddb7d116c3bf2443c9559251916b4f6",
+    "source_status": "recovered prompt; intended reference supplied by Mark"
   }
 ]

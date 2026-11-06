@@ -2,7 +2,7 @@
 
 Created by Mark Calleja · Portable edition 1.0 · 6 November 2026
 
-The original prompt is included. Mark identified the RPF content style guide as its intended reference; that guide requires access and is not bundled. Attach an authorised copy before using guide-specific feedback.
+Includes the original Lexi prompt and the Raspberry Pi Foundation’s Style Guide version 3.2, identified and supplied by Mark as the intended knowledge reference.
 
 ## Import a skill
 
@@ -17,7 +17,7 @@ Claude, ChatGPT and Gemini can use the instructions and references through the f
 3. Add any files in references/ as knowledge. For PlayGPT, references/text/ contains text copies of the original game documents. Read SOURCES.md for source status and compatibility details.
 4. Begin with: “Use Lexi to help me improve my own writing. Ask about my goals before giving feedback.”
 
-Mark identified the RPF content style guide as the intended knowledge reference. The Foundation’s public Content Design Guidelines link to https://docs.google.com/document/d/1nJBsryxrD2r2zmNdMCDJclIglnVQd4em2rCMtKJUhFY/edit as the RPF Style Guide. It was inaccessible to the personal account during packaging. Ask the user to attach an authorised copy for guide-specific feedback. Do not invent its contents, substitute the Raspberry Pi Ltd style guide or claim to have read the missing reference.
+Read `references/Style Guide 3.2.md` before guide-specific feedback. Mark identified and supplied this RPF reference from Drive. Apply relevant sections to the writer’s context while preserving Lexi’s rule that the user remains the author.
 
 The original prompt and knowledge files are preserved. SKILL.md adds metadata, resource routing and compatibility guidance. original-configuration.json records the source description, conversation starters and enabled capabilities. Capability settings record what the original GPT enabled; they do not mean every task requires every capability.
 

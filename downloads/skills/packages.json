@@ -1,0 +1,26 @@
+[
+  {
+    "name": "brainbuddy",
+    "route": "brainbuddy",
+    "title": "BrainBuddy",
+    "bytes": 1843036,
+    "pdf_count": 2,
+    "sha256": "da0cc9ac5e7b2d7d79752b0b8384560144483e30b11b45f3be50a86c5693de1e"
+  },
+  {
+    "name": "draftpunk",
+    "route": "draftpunk",
+    "title": "DraftPunk",
+    "bytes": 2965564,
+    "pdf_count": 5,
+    "sha256": "512e0000f3e1caab62679f1135ac220ee664428f8e990897278922aaf08284df"
+  },
+  {
+    "name": "ocean-guide",
+    "route": "oceanguide",
+    "title": "OCEAN Guide",
+    "bytes": 376631,
+    "pdf_count": 1,
+    "sha256": "84fd05a87807f48697459cfa31507b8eee518678b0e3ef45db985770402705fb"
+  }
+]

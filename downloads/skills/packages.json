@@ -116,9 +116,9 @@
     "name": "lexi",
     "route": "lexi",
     "title": "Lexi the Writing Companion",
-    "bytes": 70953,
+    "bytes": 9958,
     "reference_count": 1,
-    "sha256": "49829b05d4a892d81dd5505e39020d906ddb7d116c3bf2443c9559251916b4f6",
-    "source_status": "recovered prompt; intended reference supplied by Mark"
+    "sha256": "d6e1b5e3c0edcf323f0f80b53638a5e0a7f1cbfc8f594b70b9dc4c6265c2b186",
+    "source_status": "constitution edition 2.0; original GPT source archived"
   }
 ]

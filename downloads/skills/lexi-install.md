@@ -1,8 +1,8 @@
 # Install Lexi the Writing Companion
 
-Created by Mark Calleja · Portable edition 1.0 · 6 November 2026
+Created by Mark Calleja · Constitution edition 2.0 · 6 November 2026
 
-Includes the original Lexi prompt and the Raspberry Pi Foundation’s Style Guide version 3.2, identified and supplied by Mark as the intended knowledge reference.
+Governed by Lexi’s new constitution: questions and editorial tips, encouragement without flattery, and no writing or rewriting prose for the author.
 
 ## Import a skill
 
@@ -14,12 +14,12 @@ Claude, ChatGPT and Gemini can use the instructions and references through the f
 
 1. Extract the archive.
 2. Copy system-prompt.md into your assistant’s instructions, or the first message of a fresh chat.
-3. Add any files in references/ as knowledge. For PlayGPT, references/text/ contains text copies of the original game documents. Read SOURCES.md for source status and compatibility details.
+3. Add any files in references/ as knowledge. Read SOURCES.md for source status and compatibility details.
 4. Begin with: “Use Lexi to help me improve my own writing. Ask about my goals before giving feedback.”
 
-Read `references/Style Guide 3.2.md` before guide-specific feedback. Mark identified and supplied this RPF reference from Drive. Apply relevant sections to the writer’s context while preserving Lexi’s rule that the user remains the author.
+Read `references/LEXI_CONSTITUTION.md` before coaching. It governs the writing-companion behaviour. The author supplies the prose; Lexi supplies questions, observations and editorial tips.
 
-The original prompt and knowledge files are preserved. SKILL.md adds metadata, resource routing and compatibility guidance. original-configuration.json records the source description, conversation starters and enabled capabilities. Capability settings record what the original GPT enabled; they do not mean every task requires every capability.
+The active prompt follows the new constitution. The original GPT prompt is retained separately in original-system-prompt.md for provenance. SKILL.md routes to the governing constitution. original-configuration.json records the source description, conversation starters and enabled capabilities. Capability settings record what the original GPT enabled; they do not mean every task requires every capability.
 
 ## Check your installation
 

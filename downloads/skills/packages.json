@@ -30,5 +30,95 @@
     "bytes": 7518,
     "reference_count": 1,
     "sha256": "cda49956d778c33675961a597fcbe143bbade23a79e3f24d08ea0f1931f67436"
+  },
+  {
+    "name": "ai-ta",
+    "route": "ai-ta",
+    "title": "AI-TA 2.0",
+    "bytes": 7447024,
+    "reference_count": 20,
+    "sha256": "fb1a848c62e9782c3413aadcefe623900a97fc6a652f268144a8e1c5701d21bb",
+    "source_status": "recovered"
+  },
+  {
+    "name": "adventuremaster",
+    "route": "adventuremaster",
+    "title": "AdventureMaster",
+    "bytes": 10019,
+    "reference_count": 0,
+    "sha256": "017eb4d24fed78a06697186cae2fe8bc3364b7b0f50bd515db628cc2fcbdf9a4",
+    "source_status": "recovered"
+  },
+  {
+    "name": "platos-ghost",
+    "route": "platos-ghost",
+    "title": "Plato’s Ghost",
+    "bytes": 10333,
+    "reference_count": 0,
+    "sha256": "0d005cd9489b4c9d2bc42000e098b1c5abb3ff7df8df60014c987af1607886bd",
+    "source_status": "recovered"
+  },
+  {
+    "name": "purple-craiyon",
+    "route": "purple-craiyon",
+    "title": "The Purple CrAIyon",
+    "bytes": 5805,
+    "reference_count": 0,
+    "sha256": "37026a2da5941bf8087ca053f9d20c965c3822acde667b062892536b8d7a77e3",
+    "source_status": "recovered"
+  },
+  {
+    "name": "bogan-philosopher",
+    "route": "bogan-philosopher",
+    "title": "The Bogan Philosopher",
+    "bytes": 9170,
+    "reference_count": 0,
+    "sha256": "376b1b40632a9b04169c9f75e72cabe04091fa0bdcb4f532535247b5b3e96fd3",
+    "source_status": "recovered"
+  },
+  {
+    "name": "alt-text-bot",
+    "route": "alt-text-bot",
+    "title": "Alt-text Bot",
+    "bytes": 1216501,
+    "reference_count": 1,
+    "sha256": "248e0d54cbdd99482b7623e046f581ef247acd9e9f70c8cff09387e3b0ed81a4",
+    "source_status": "recovered"
+  },
+  {
+    "name": "playgpt",
+    "route": "playgpt",
+    "title": "PlayGPT",
+    "bytes": 1070190,
+    "reference_count": 6,
+    "sha256": "dd157ec817f35120fc63c198bc198d75d8b29dcfb3ce24eaf467ec033ca34396",
+    "source_status": "recovered"
+  },
+  {
+    "name": "runebound-mystic",
+    "route": "runebound-mystic",
+    "title": "The Runebound Mystic",
+    "bytes": 13686,
+    "reference_count": 1,
+    "sha256": "28f6c9680d0b951cb4d1f3de433f4c0f062aac7d8cdb2e3eda94296cf08fb46b",
+    "source_status": "recovered"
+  },
+  {
+    "name": "copybot",
+    "route": "copybot",
+    "title": "Copybot",
+    "bytes": 5148,
+    "reference_count": 0,
+    "sha256": "dda52cd2a7bbfc0d6ff55d1232a1630e2170c00a37856313328788d5cc5dfeeb",
+    "source_status": "recovered"
+  },
+  {
+    "name": "lexi",
+    "route": "lexi",
+    "title": "Lexi the Writing Companion",
+    "bytes": 4721,
+    "reference_count": 0,
+    "sha256": "7b968082963c6b53fdf3e04cab450190fdb0ea4e3e9f4efbac9ecabaa0d06f3d",
+    "source_status": "prompt-only; reference missing"
   }
 ]

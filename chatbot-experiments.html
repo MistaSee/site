@@ -126,7 +126,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&amp;family=Caveat:wght@600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=VT323&amp;display=swap" />
     <link rel="stylesheet" href="styles.css?v=20260926-narrator" />
     <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("randoMode")==="1")document.documentElement.classList.add("machine")}catch(e){}</script>
-  </head>
+    <link rel="stylesheet" href="/skill-setup.css">
+  <script src="/skill-setup.js" defer></script>
+</head>
   <body class="page">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="wrapper">
@@ -171,6 +173,25 @@
       specific instructions. It’s… fine. I’m fine.
     </span>
   </p>
+    <div class="skill-setup" data-skill-setup>
+      <p>Copy this into your AI agent to choose and set up an experiment.</p>
+      <button class="skill-copy-button" type="button" data-copy-setup hidden>Copy prompt</button>
+      <span class="skill-copy-status" role="status" aria-live="polite"></span>
+      <details>
+        <summary>View setup prompt</summary>
+        <textarea readonly aria-label="Setup prompt" spellcheck="false">Help me choose and set up an experiment from this skill collection:
+
+https://markcalleja.info/downloads/skills/all-experiment-skills.zip
+
+Download and extract the ZIP. It contains individual .skill archives; each is also a ZIP archive. Inspect their SKILL.md metadata and show me the available experiments with a short explanation of each. Ask which one I want to use. Do not install or activate all of them automatically.
+
+After I choose, read that experiment’s INSTALL.md, SKILL.md and required references. Use your environment’s supported skill installation method if available; otherwise, load it for this conversation. Preserve existing skills and settings, and ask before replacing an existing version.
+
+Tell me what you actually installed or loaded and any missing files or capabilities. Then introduce the selected experiment and invite me to begin.
+
+If you cannot download or extract the files, explain the limitation and ask me to attach the ZIP. Do not claim setup succeeded unless you have read the required files.</textarea>
+      </details>
+    </div>
   <p><a href="/downloads/skills/all-experiment-skills.zip" download>Download all 14 skill packages (.zip)</a></p>
 </section>
 

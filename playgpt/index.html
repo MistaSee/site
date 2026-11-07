@@ -30,6 +30,8 @@
     .download-page a:focus-visible{outline:3px solid #bd572b;outline-offset:4px}
     .download-page code{overflow-wrap:anywhere}
   </style>
+  <link rel="stylesheet" href="/skill-setup.css">
+  <script src="/skill-setup.js" defer></script>
 </head>
 <body class="page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -39,6 +41,25 @@
     <h1>PlayGPT</h1>
     <p class="download-intro">I’m PlayGPT. Gather your players and pick a game: emoji puzzles, mysteries, quizzes, image charades, alternate histories or a text adventure. I’ll host the proceedings.</p>
     <p class="download-meta">6 original knowledge files included</p>
+    <div class="skill-setup" data-skill-setup>
+      <p>Copy this into your AI agent and let it handle the setup.</p>
+      <button class="skill-copy-button" type="button" data-copy-setup hidden>Copy prompt</button>
+      <span class="skill-copy-status" role="status" aria-live="polite"></span>
+      <details>
+        <summary>View setup prompt</summary>
+        <textarea readonly aria-label="Setup prompt" spellcheck="false">Set up PlayGPT from this skill package:
+
+https://markcalleja.info/downloads/skills/playgpt.zip
+
+Download and extract the ZIP, then read INSTALL.md and SKILL.md. Keep the bundled reference files together with the skill.
+
+If your environment supports installing skills, use its supported installation method. Preserve any existing skills and settings, and ask before replacing an existing version. Otherwise, load PlayGPT’s instructions and required references for this conversation.
+
+Tell me whether you have installed it for future use or loaded it for this chat, and identify any files or capabilities you could not access. Then introduce yourself as PlayGPT and invite me to begin.
+
+If you cannot download or extract the package, explain the limitation and ask me to attach the ZIP. Do not claim that setup succeeded unless you have actually read the required files.</textarea>
+      </details>
+    </div>
     <div class="download-actions">
       <a class="download-primary" href="/downloads/skills/playgpt.skill" download>Download .skill</a>
       <a class="download-secondary" href="/downloads/skills/playgpt.zip" download>Download ZIP</a>

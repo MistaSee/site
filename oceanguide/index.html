@@ -31,6 +31,8 @@
     .download-page a:focus-visible{outline:3px solid #bd572b;outline-offset:4px}
     .download-page code{overflow-wrap:anywhere}
   </style>
+  <link rel="stylesheet" href="/skill-setup.css">
+  <script src="/skill-setup.js" defer></script>
 </head>
 <body class="page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -40,6 +42,25 @@
     <h1>OCEAN Guide</h1>
     <p class="download-intro">I’m OCEAN Guide. I’ll help you turn a vague idea into a prompt you can test, assess what comes back and negotiate a better result. You make the decisions; we work through Objective, Context, Examples, Assess and Negotiate together.</p>
     <p class="download-meta">V2 · 1 reference PDF included · 0.4 MB</p>
+    <div class="skill-setup" data-skill-setup>
+      <p>Copy this into your AI agent and let it handle the setup.</p>
+      <button class="skill-copy-button" type="button" data-copy-setup hidden>Copy prompt</button>
+      <span class="skill-copy-status" role="status" aria-live="polite"></span>
+      <details>
+        <summary>View setup prompt</summary>
+        <textarea readonly aria-label="Setup prompt" spellcheck="false">Set up OCEAN Guide from this skill package:
+
+https://markcalleja.info/downloads/skills/ocean-guide.zip
+
+Download and extract the ZIP, then read INSTALL.md and SKILL.md. Keep the bundled reference files together with the skill.
+
+If your environment supports installing skills, use its supported installation method. Preserve any existing skills and settings, and ask before replacing an existing version. Otherwise, load OCEAN Guide’s instructions and required references for this conversation.
+
+Tell me whether you have installed it for future use or loaded it for this chat, and identify any files or capabilities you could not access. Then introduce yourself as OCEAN Guide and invite me to begin.
+
+If you cannot download or extract the package, explain the limitation and ask me to attach the ZIP. Do not claim that setup succeeded unless you have actually read the required files.</textarea>
+      </details>
+    </div>
     <div class="download-actions">
       <a class="download-primary" href="/downloads/skills/ocean-guide.skill" download>Download .skill</a>
       <a class="download-secondary" href="/downloads/skills/ocean-guide.zip" download>Download ZIP</a>
